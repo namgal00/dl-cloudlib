@@ -1,0 +1,36 @@
+<!-- header -->
+<div id="wjHd">
+	<div class="w983 fc">
+		<div class="fn_bar">
+			<div class="nav">
+				<a href="#" target="_blank">云图数字图书馆首页</a>
+				
+				[#if reader?exists]
+				<span>欢迎您！${reader.name}</span>
+				<a href="/user/searchHistory" target="_blank">个人中心</a>
+				<script>
+					/*把当前页面的连接作为path参数传回去，当退出完成之后还要跳到当前这个页面*/
+					var loginUrl="${base}/logout.jhtml?path="+window.location.pathname;
+					loginUrl = '<a href="'+loginUrl+'">退出</a>';
+					document.write(loginUrl);
+				</script>
+				[#else]
+				<a href="/user/searchHistory" target="_blank">个人中心</a>
+				<script>
+					/*把当前页面的连接作为path参数传回去，当登录完成之后还要跳到当前这个页面*/
+					var loginUrl="${base}/login.jhtml?path="+window.location.pathname;
+					loginUrl = '<a href="'+loginUrl+'">登录</a>';
+					document.write(loginUrl);
+				</script>
+
+				[/#if]
+				
+				
+				
+				<a href="${base}/suggest" target="_blank">意见反馈</a>
+				<a href="${base}/help" target="_blank">帮助</a>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- header end -->

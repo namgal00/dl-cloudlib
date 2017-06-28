@@ -1,0 +1,93 @@
+﻿html,body{
+	font-family: "微软雅黑";
+	background-color: #efefef;
+	margin: 0px;
+	padding: 0px;
+	font-size: 12px;
+	height: 100%;
+	overflow-x:hidden;
+}
+
+ul,li{
+	list-style: none;
+	padding: 0px;
+	margin: 0px;
+}
+/*public header*/
+header{
+	background: #1f262e;
+	height: 121px;
+	min-width:1150px;
+}
+header h1{
+	float: left;
+	height: 121px;
+	width: 314px;
+	margin: 0px;
+	border-right:1px solid #000;
+}
+header h1 a{
+	height: 121px;
+	display: block;
+	text-indent: -9999px;
+	background: url(../img/logo.png);
+}
+header h1 a:hover{
+	opacity: 0.7;
+	background-color: #101418;
+}
+header ul{
+	border-right:1px solid #2e363f;
+	float: left;
+	overflow: auto;
+}
+header ul li{
+	float: left;
+	height: 121px;
+	 border-left:1px solid #2e363f;
+	 border-right:1px solid #000;
+}
+header ul li a{
+	color:#FFF;
+	text-decoration: none;
+	width: 160px;
+	padding: 0px;
+	text-align: center;
+	display: block;
+	height: 121px;
+}
+header ul li a:hover{
+	color:#ccc;
+	background: #101418;
+}
+header ul li a:hover span{opacity: 0.7;}
+header ul li span{
+	display: block;
+	padding-top:27px;
+	text-align: center;
+}
+header div{
+	float: right;
+	width: 250px;
+	text-align: right;
+	padding-top:10px;
+	line-height: 28px;
+}
+header div a{
+	color: #FFF;
+	text-decoration: none;
+	display: inline-block;
+	width: 40px;
+	text-align: center;
+	border-left:1px solid #2e363f;
+	border-right:1px solid #000;
+	font-size: 20px;
+}
+header div a:hover{color: #999;}
+header div a:first-child{border-left:0px;}
+header div span{
+	display: inline-block;
+	padding-top:40px;
+	color: #bcbdbe;
+	padding-right: 10px;
+}

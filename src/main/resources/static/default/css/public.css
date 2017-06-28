@@ -1,0 +1,43 @@
+html,body {
+	font-family: "΢���ź�";
+	background-color: #efefef;
+	margin: 0px;
+	padding: 0px;
+	font-size: 12px;
+	height: 100%;
+	min-width: 1150px;
+}
+
+ul,li {
+	list-style: none;
+	padding: 0px;
+	margin: 0px;
+}
+
+#head {
+	width: 100%;
+	min-width: 1150px;
+	height: 121px;
+	float: left;
+}
+
+#nav {
+	width: 250px;
+	height: calc(100% -   121px);
+	float: left;
+}
+
+#main {
+	/*margin: 10px 0px 0px 10px;*/
+	min-width: 860px;
+	width: 100%;
+	height: 100%;
+	float: left;
+}
+
+textarea {
+	width: 300px;
+}
+.field_notice{
+	color: red;
+}

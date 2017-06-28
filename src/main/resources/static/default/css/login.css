@@ -1,0 +1,76 @@
+body {
+	background: url(../img/loginBg.gif) top center repeat #000;
+}
+
+ul,li {
+	list-style: none;
+}
+
+center {
+	background: url(../img/loginBook.png);
+	width: 403px;
+	height: 302px;
+	margin: 186px auto 0px auto;
+}
+
+center ul {
+	padding-top: 90px;
+	margin: 0px auto;
+	width: 270px;
+}
+
+center ul li {
+	height: 45px;
+	font-size: 16px;
+	font-family: "微软雅黑";
+	color: #ffe3bf;
+}
+
+center ul li span {
+	display: block;
+	float: left;
+	width: 70px;
+	height: 26px;
+}
+
+center ul li input {
+	height: 26px;
+	border: 0px;
+	float: left;
+	width: 190px;
+	text-indent: 10px;
+	box-shadow: 0px 2px 10px #555;
+}
+
+.captcha ul li {
+	height: 35px;
+}
+
+.captcha ul li input {
+	height: 20px;
+}
+
+center ul li input:focus,center ul li input:hover {
+	border: 1px solid #1F262C;
+}
+
+center ul li button {
+	height: 30px;
+	border: 1px solid #633;
+	float: left;
+	width: 190px;
+	text-indent: 10px;
+	font-size: 14px;
+	font-family: "微软雅黑";
+	color: #bbe6ff;
+	cursor: pointer;
+	/*渐变*/
+	/* Firefox */
+	background-image: -moz-linear-gradient(top, #401618, #561518, #401618);
+	/* Saf4+, Chrome */
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #401618),
+		color-stop(0.5, #561518), color-stop(1, #401618) );
+	/* IE*/
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#401618',
+		endColorstr='#561518' GradientType='0' );
+}

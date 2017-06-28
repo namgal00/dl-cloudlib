@@ -1,0 +1,78 @@
+@charset "utf-8";
+/* Global */
+body { font-size: 12px; font-family:"宋体","Times New Roman", Times, serif; height:100%; color:#666; margin
+:0px; }
+ul, ol, dl, li { list-style: none; }
+html { height: 100%; }
+img { border: none; }
+a { color: #003366; text-decoration:none; }
+a:hover { color: #3398cc; }
+p, a, span, li { white-space: normal; }
+input { font-size: 12px; vertical-align: middle; }
+/* Font */
+.fwb { font-weight: bold; }
+.fwn { font-weight: normal; }
+.tdn { text-decoration: none; }
+.tdu { text-decoration: underline; }
+.tdl { text-decoration: line-through; }
+/* Size */
+.fs10p { font-size: 10px; }
+.fs12p { font-size: 12px; }
+.fs14p { font-size: 14px; }
+.fs16p { font-size: 16px; }
+.fs18p { font-size: 18px; }
+.fs20p { font-size: 20px; }
+.fs22p { font-size: 22px; }
+.fs24p { font-size: 24px; }
+/* Color */
+.c0 { color: #000; }
+.cc { color: #ccc; }
+.cf { color: #fff; }
+.c3 { color:#333; }
+/* Text */
+.tal { text-align: left; }
+.tar { text-align: right; }
+.tac { text-align: center; }
+.ti2e { text-indent: 2em; }
+/* Background */
+.bc0 { background-color: #000; }
+.bcf { background-color: #fff; }
+/* Position */
+.zi1 { z-index: 1; }
+/* Dimensions */
+.h100per { height: 100%; }
+.w100per { width: 100%; }
+.lh18p { line-height:18px; }
+.lh20p { line-height:20px; }
+.lh22p { line-height:22px; }
+.lh24p { line-height:24px; }
+.lh26p { line-height:26px; }
+.lh28p { line-height:28px; }
+.lh30p { line-height:30px; }
+/* Layout */
+.fr { float: right; }
+.fl { float: left; }
+.oh { overflow: hidden; }
+.oa { overflow: auto; }
+.os { overflow: scroll; }
+.dn { display: none; }
+.db { display: block; }
+.di { display: inline; }
+/* Margins */
+.m5p { margin: 5px; }
+.m10p { margin: 10px; }
+.mt5p { margin-top: 5px; }
+.mr5p { margin-right: 5px; }
+.mb5p { margin-bottom: 5px; }
+.ml5p { margin-left: 5px; }
+/* Paddings */
+.p5p { padding: 5px; }
+.p10p { padding: 10px; }
+.pt5p { padding-top: 5px; }
+.pr5p { padding-right: 5px; }
+.pb5p { padding-bottom: 5px; }
+.pl5p { padding-left: 5px; }
+/* Combine Define */
+.center { margin-left:auto; margin-right:auto; }
+.vscape { clear:both; height:1px; overflow:hidden; }
+.duiqi {text-align:justify; text-justify:inter-ideograph;}

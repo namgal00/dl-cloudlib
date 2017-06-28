@@ -1,0 +1,90 @@
+html,body{
+	font-family: "΢���ź�";
+	background-color: #efefef;
+	margin: 0px;
+	padding: 0px;
+	font-size: 12px;
+	height: 100%;
+	overflow-x:hidden;
+}
+ul,li{
+	list-style: none;
+	padding: 0px;
+	margin: 0px;
+}
+/*public nav*/
+nav{
+	width: 250px;
+	background: #2e3740;
+	float: left;
+	/*margin-top: 10px;*/
+	overflow: auto;
+	height: calc(100% - 10px);
+}
+nav h1{
+	color:#FFF;
+	font-size: 12px;
+	font-weight: normal;
+	height: 50px;
+	padding: 30px 0px 26px 18px;
+	line-height: 26px;
+	border-bottom: 1px solid #1f262c;
+	margin: 0px;
+}
+nav h1 img{
+	float: left;
+	border:1px solid #20272e;
+	margin-right:18px
+}
+nav dl{
+	margin: 0px;
+	padding: 0px;
+	/*border-bottom: 1px solid #37414b;*/
+}
+nav dt{
+	border-top: 1px solid #37414b;
+	border-bottom: 1px solid #20272e;
+	height: 52px;
+	line-height: 52px;
+	color:#FFF;
+	cursor: pointer;
+	text-indent: 38px;
+	font-size: 14px;
+}
+nav dt:hover{
+	background: #344251;
+}
+nav dt source{
+	display: block;
+	float: right;
+	font-size: 28px;
+	margin: 10px 30px 0px 0px;
+}
+nav dt.on{
+	background: #344251;	
+}
+
+nav dd{
+	border-top: 1px solid #37414b;
+	border-bottom: 1px solid #20272e;
+	padding: 0px;
+	margin: 0px;
+	height: 40px;
+	line-height: 40px;
+	text-indent: 65px;
+	color: #FFF;
+	background: #344251;
+	text-align: left;
+	cursor: pointer;
+	display: none;
+}
+nav dd:hover{
+	background: #2d3a47;
+}
+nav dd a{
+	color:#FFF;
+	line-height: 40px;
+	text-decoration: none;
+	margin-left:18px;
+	text-align: left;
+}

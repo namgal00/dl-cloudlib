@@ -1,0 +1,71 @@
+/* color */
+.dark-blue {color:#4d788b}
+.dark-blue1 {color:#124b65}
+.white {color:#FFFFFF}
+.light-black {color:#0e0e0e}
+.light-blue {color:#276c97;}
+.gray {color:#7d7d7d}
+.gray1 {color:#636363}
+.dark-green{ color:#3f4c26}
+.dark-green1 {color:#36601a}
+.yellow-green {color:#464e07}
+.brown {color:#454545;}
+
+/*links*/
+a.white:link{color:#FFFFFF; text-decoration:none}
+a.white:visited{color:#FFFFFF; text-decoration:none}
+a.white:active{color:#FFFFFF; text-decoration:none}
+a.white:hover{color:#FFFFFF; text-decoration: underline;}
+
+a.dark-blue1:link{color:#124b65; text-decoration:none}
+a.dark-blue1:visited{color:#124b65; text-decoration:none}
+a.dark-blue1:active{color:#124b65; text-decoration:none}
+a.dark-blue1:hover{color:#124b65; text-decoration: underline;}
+
+a.light-black:link{color:#0e0e0e; text-decoration:none}
+a.light-black:visited{color:#0e0e0e; text-decoration:none}
+a.light-black:active{color:#0e0e0e; text-decoration:none}
+a.light-black:hover{color:#0e0e0e; text-decoration: underline;}
+
+a.light-blue:link{color:#276c97; text-decoration:none}
+a.light-blue:visited{color:#276c97; text-decoration:none}
+a.light-blue:active{color:#276c97; text-decoration:none}
+a.light-blue:hover{color:#3398cc; text-decoration:none;}
+
+a.gray:link{color:#7d7d7d; text-decoration:none}
+a.gray:visited{color:#7d7d7d; text-decoration:none}
+a.gray:active{color:#7d7d7d; text-decoration:none}
+a.gray:hover{color:#7d7d7d; text-decoration: underline;}
+
+a.gray1:link{color:#636363; text-decoration:none}
+a.gray1:visited{color:#636363; text-decoration:none}
+a.gray1:active{color:#636363; text-decoration:none}
+a.gray1:hover{color:#636363; text-decoration: underline;}
+
+a.dark-green:link{color:#3f4c26; text-decoration:none}
+a.dark-green:visited{color:#3f4c26; text-decoration:none}
+a.dark-green:active{color:#3f4c26; text-decoration:none}
+a.dark-green:hover{color:#3f4c26; text-decoration: underline;}
+
+a.dark-green1:link{color:#36601a; text-decoration:none}
+a.dark-green1:visited{color:#36601a; text-decoration:none}
+a.dark-green1:active{color:#36601a; text-decoration:none}
+a.dark-green1:hover{color:#36601a; text-decoration: underline;}
+
+a.brown:link{color:#454545; text-decoration:none}
+a.brown:visited{color:#454545; text-decoration:none}
+a.brown:active{color:#454545; text-decoration:none}
+a.brown:hover{color:#454545; text-decoration: underline;}
+
+a.yellow-green:link{color:#464e07; text-decoration:none}
+a.yellow-green:visited{color:#464e07; text-decoration:none}
+a.yellow-green:active{color:#464e07; text-decoration:none}
+a.yellow-green:hover{color:#464e07; text-decoration: underline;}
+
+/*others*/
+.show{
+	display:block;
+}
+.hide{
+	display:none;
+}

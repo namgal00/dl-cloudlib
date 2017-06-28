@@ -1,0 +1,43 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>云图电子书系统</title>
+<!--css start-->
+<!-- Bootstrap Core CSS -->
+<link type="text/css" href="${base}/teacher/css/lanrenzhijia.css" rel="stylesheet">
+<link type="text/css" href="${base}/teacher/thirdparty/startbootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Custom CSS -->
+<link type="text/css" href="${base}/teacher/thirdparty/startbootstrap/css/sb-admin.css" rel="stylesheet">
+<!-- Morris Charts CSS -->
+<link type="text/css" href="${base}/teacher/thirdparty/startbootstrap/css/plugins/morris.css" rel="stylesheet">
+<!-- Custom Fonts -->
+<link type="text/css" href="${base}/teacher/thirdparty/startbootstrap/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link type="text/css" href="${base}/teacher/css/bootstrap.self.css" rel="stylesheet">
+
+<!--css end-->
+<script type="text/javascript" src="${base}/teacher/thirdparty/startbootstrap/js/jquery.js">
+</script>
+<!-- Bootstrap Core JavaScript -->
+<script type="text/javascript" src="${base}/teacher/thirdparty/startbootstrap/js/bootstrap.min.js">
+</script>
+<script type="text/javascript" src="${base}/teacher/js/jquery-wenda-common.js">
+</script>
+<script type="text/javascript" src="${base}/teacher/js/jquery-wenda-plugin.js">
+</script>
+
+
+<script type="text/javascript">
+    var base = "${base}";
+    var winWidth = 0;
+    var winHeight = 0;
+    findDimensions();
+    //调用函数，获取数值
+    window.onresize = findDimensions;
+    $(function(){
+        var max_height = document.documentElement.clientHeight - 105;
+        var primary = document.getElementById('page-wrapper');
+        if (WD.isNotBlank(primary)) {
+            primary.style.minHeight = max_height + "px";
+            
+        }
+    })
+</script>

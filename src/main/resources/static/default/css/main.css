@@ -1,0 +1,345 @@
+﻿html,body{
+	font-family: "微软雅黑";
+	background-color: #efefef;
+	margin: 0px;
+	padding: 0px;
+	font-size: 12px;
+	height: 100%;
+}
+ul,li{
+	list-style: none;
+	padding: 0px;
+	margin: 0px;
+}
+
+/*public main title*/
+.main{
+	float: left;
+	overflow: auto;
+	width: 100%;
+	//margin: 10px 0px 0px 10px;
+	//min-width: 860px;
+	//height: calc(100% - 131px);
+}
+.main .title{
+	height: 36px;
+	border: 1px solid #272f38;
+	color:#FFF;
+	font-size: 14px;
+	line-height: 32px;
+	position: relative;
+	/*减去多出部分*/
+	width: calc(100% - 10px);
+	/*渐变*/
+	/* Firefox */
+	background-image: -moz-linear-gradient(top, #394754, #1f262e); 
+	/* Saf4+, Chrome */
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #394754), color-stop(1, #1f262e)); 
+	/* IE*/
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#394754', endColorstr='#1f262e' GradientType='0'); 
+}
+.main .title section{
+	float: right;
+}
+.main .title section a{
+	padding:0px 5px;
+	border: 0px;
+	text-indent: 0px;
+	font-size: 16px;
+}
+.main .title section a b{
+	display: inline-block;
+	padding: 0px 5px;
+	color:#ca0;
+}
+.main .title span{
+	display: inline-block;
+	text-indent: 25px;
+}
+.main .title a{
+	display: inline-block;
+	padding: 0px 15px;
+	border-right: 1px solid #272f38;
+	color:#FFF;
+	text-decoration: none;
+	height: 36px;
+}
+.main .title a.on{
+	background:#FFF;
+	color:#000;
+	height: 37px;
+}
+.main .title a:hover{
+	color:#CCC;
+}
+
+/*main search*/
+.main .search{
+	border: 1px solid #b0b0b0;
+	padding: 10px 0px;
+	width: calc(100% - 10px);
+	margin-top: 10px;
+}
+.main .search span{
+	 padding:0px 10px 0px 20px;
+	 display: inline-block;
+	 height: 40px;
+	 font-size: 14px;
+	 line-height: 40px;
+}
+.main .search span .length-one{
+	width:130px;
+	border: 1px solid #CCC;
+	height: 26px;
+	text-indent: 5px;
+	padding: 0px;
+	margin: 0px;
+	outline:#CCAA00;
+}
+.main .search span select.length-one{
+	width:132px;
+}
+.main .search span .length-one:focus,.main .search span select:focus,.main .search span .length-one:hover,.main .search span select:hover{
+	border: 1px solid #156CCC;
+}
+.main .search span select{
+	border: 1px solid #CCC;
+	height: 26px;
+	width: 66px;
+}
+.main .search span button{
+	border-radius: 4px;
+	color:#FFF;
+	height: 28px;
+	cursor: pointer;
+}
+.main .search span button.btn-yellow{
+	border: 1px solid #a64e00;
+	/*渐变*/
+	/* Firefox */
+	background-image: -moz-linear-gradient(top, #feca00, #fc6100); 
+	/* Saf4+, Chrome */
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #feca00), color-stop(1, #fc6100)); 
+	/* IE*/
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#feca00', endColorstr='#fc6100' GradientType='0'); 
+}
+.main .search span button.btn-yellow:hover{
+	/* Firefox */
+	background-image: -moz-linear-gradient(top, #fc6100, #feca00); 
+	/* Saf4+, Chrome */
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fc6100), color-stop(1, #feca00)); 
+	/* IE*/
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fc6100', endColorstr='#feca00' GradientType='0'); 
+}
+.main .search span button.btn-blue{
+	border: 1px solid #0059bb;
+	/*渐变*/
+	/* Firefox */
+	background-image: -moz-linear-gradient(top, #64d9f1, #156ccc); 
+	/* Saf4+, Chrome */
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #64d9f1), color-stop(1, #156ccc)); 
+	/* IE*/
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#64d9f1', endColorstr='#156ccc' GradientType='0'); 
+}
+.main .search span button.btn-blue:hover{
+	/*渐变*/
+	/* Firefox */
+	background-image: -moz-linear-gradient(top, #156ccc, #64d9f1); 
+	/* Saf4+, Chrome */
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #156ccc), color-stop(1, #64d9f1)); 
+	/* IE*/
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#156ccc', endColorstr='#64d9f1' GradientType='0'); 
+}
+
+
+/*main nav*/
+.main .nav{
+	height: 32px;
+	border: 1px solid #272f38;
+	color:#FFF;
+	font-size: 14px;
+	line-height: 30px;
+	margin-top:10px;
+	text-align: center;
+	/*减去多出部分*/
+	width: calc(100% - 10px);
+	/*渐变*/
+	/* Firefox */
+	background-image: -moz-linear-gradient(top, #394754, #1f262e); 
+	/* Saf4+, Chrome */
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #394754), color-stop(1, #1f262e)); 
+	/* IE*/
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#394754', endColorstr='#1f262e' GradientType='0'); 
+}
+.main .nav title{
+	font-size: 14px;
+	float: left;
+	border-right: 1px solid #272f38;
+	padding: 0px 20px;
+	display: block;
+}
+.main .nav ul{
+	float: right;
+}
+.main .nav ul li{
+	float: left;
+	border-left: 1px solid #2e363f;
+	border-right: 1px solid #272f38;
+}
+.main .nav ul li:first-child{
+	border-left: none;
+}
+.main .nav ul li a{
+	color: #FFF;
+	text-decoration: none;
+	padding: 0px 10px;
+	font-size: 14px;
+}
+.main .nav ul li a:hover{
+	color: #CCC;
+}
+
+/*main public table*/
+.pubTable table{
+	border: 1px solid #b0b0b0;
+	border-top: 0px;
+	border-bottom: 0px;
+	width:calc(100% - 8px);
+	word-break:break-all;
+}
+.pubTable table th:first-child,.pubTable table td:first-child{
+	border-left: 0px;
+}
+.pubTable table th,.pubTable table td{
+	border-left: 1px solid #b0b0b0;
+	border-bottom: 1px solid #b0b0b0;
+	text-align: center;
+	height: 40px;
+}
+.pubTable table th{
+	background: #ececec;
+	font-size: 14px;
+}
+.pubTable table td div{
+	height: 40px;
+	line-height: 40px;
+	overflow: hidden;
+	padding: 0px 10px;
+}
+.pubTable table tr:nth-child(even) td {
+	/*（偶数行）*/
+	background-color: #FFF;
+}  
+.pubTable table tr:nth-child(odd) td {
+	/*（奇数行）*/
+	background-color: #ececec;
+} 
+.pubTable table tr:hover td{
+	background: #F5F5F5;
+}
+.pubTable section{
+	text-align: right;
+	background: #2e3740;
+	color:#FFF;
+	height: 40px;
+	line-height: 38px;
+	font-size: 14px;
+	padding-right: 10px;
+	width: calc(100% - 18px);
+}
+.pubTable section input{
+	width: 30px;
+	border: 1px solid #CCC;
+}
+.pubTable section input:focus{
+	border: 1px solid #fc6100;
+}
+.pubTable section button{
+	width: 36px;
+	border-radius: 4px;
+	color:#FFF;
+	height: 22px;
+	border: 1px solid #a64e00;
+	cursor: pointer;
+	/*渐变*/
+	/* Firefox */
+	background-image: -moz-linear-gradient(top, #feca00, #fc6100); 
+	/* Saf4+, Chrome */
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #feca00), color-stop(1, #fc6100)); 
+	/* IE*/
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#feca00', endColorstr='#fc6100' GradientType='0'); 
+}
+.pubTable section button:hover{
+	/*渐变*/
+	/* Firefox */
+	background-image: -moz-linear-gradient(top, #fc6100, #feca00); 
+	/* Saf4+, Chrome */
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fc6100), color-stop(1, #feca00)); 
+	/* IE*/
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fc6100', endColorstr='#feca00' GradientType='0'); 
+}
+.pubTable section a{
+	color:#FFF;
+	text-decoration: none;
+}
+.pubTable section a:hover{
+	color:#CCC;
+}
+
+/*main public form table*/
+.pubFormTable table{
+	border: 1px solid #b0b0b0;
+	border-top: 0px;
+	border-bottom: 0px;
+	width:calc(100% - 8px);
+}
+.pubFormTable table td{
+	border-left: 1px solid #b0b0b0;
+	border-bottom: 1px solid #b0b0b0;
+	text-align: center;
+	height: 50px;
+	font-size: 14px;
+	line-height: 40px;
+}
+.pubFormTable table td:first-child{
+	border-left: 0px;
+}
+.pubFormTable table tr td:nth-child(even){
+	/*（偶数列）*/
+	background-color: #FFF;
+	text-align: left;
+	padding-left: 10px;
+}  
+.pubFormTable table tr td:nth-child(odd){
+	/*（奇数列）*/
+	background-color: #ececec;
+	text-align: right;
+	width: 250px;
+	padding-right: 10px;
+} 
+.pubFormTable table tr td select,.pubFormTable table tr td input{
+	height: 26px;
+	width: 300px;
+	padding: 0px;
+	margin: 0px;
+	border: 1px solid #CCC;
+}
+.pubFormTable table tr td select:focus,.pubFormTable table tr td input:focus,.pubFormTable table tr td select:hover,.pubFormTable table tr td input:hover{
+	border: 1px solid #156CCC;
+}
+.pubFormTable table tr td button{
+	background: #2b353f;
+	color:#FFFFFF;
+	font-size: 14px;
+	height: 30px;
+	padding: 0px 10px;
+	border: 0px;
+	font-family: "微软雅黑";
+	cursor: pointer;
+}
+.pubFormTable table tr td button:hover{
+	background: #3f4d5b;
+}
+.pubFormTable table tr:hover td{
+	background: #F5F5F5;
+}

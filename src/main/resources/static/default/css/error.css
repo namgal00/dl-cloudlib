@@ -1,0 +1,90 @@
+* {
+	margin: 0;
+	padding: 0;
+	font-size: 14px;
+}
+
+body {
+	font-family: "微软雅黑";
+	background: #DAD9D7
+}
+
+.bg {
+	width: 100%;
+	background: url("../img/01.jpg") no-repeat center top #DAD9D7;
+	position: absolute;
+	top: 0;
+	left: 0;
+	overflow: hidden
+}
+
+.cont {
+	margin: 0 auto;
+	width: 500px;
+	line-height: 20px;
+	text-align: center;
+	padding-top: 100px;
+}
+
+.c2 {
+	height: 35px;
+	text-align: center
+}
+
+.c2 a {
+	display: inline-block;
+	margin: 0 4px;
+	font-size: 14px;
+	height: 23px;
+	color: #626262;
+	padding-top: 1px;
+	text-decoration: none;
+	text-align: left
+}
+
+.c2 a:hover {
+	color: #626262;
+	text-decoration: none;
+}
+
+.c2 a.home {
+	width: 66px;
+	background: url("../img/02.png");
+	padding-left: 30px
+}
+
+.c2 a.home:hover {
+	background: url("../img/02.png") 0 -24px
+}
+
+.c2 a.home:active {
+	background: url("../img/02.png") 0 -48px
+}
+
+.c2 a.re {
+	width: 66px;
+	background: url("../img/03.png");
+	padding-left: 30px
+}
+
+.c2 a.re:hover {
+	background: url("../img/03.png") 0 -24px
+}
+
+.c2 a.re:active {
+	background: url("../img/03.png") 0 -48px
+}
+
+.c2 a.sr {
+	width: 153px;
+	background: url("../img/04.png");
+	padding-left: 28px
+}
+
+.c2 a.sr:hover {
+	background: url("../img/04.png") 0 -24px
+}
+
+.c3 {
+	min-height: 200px;
+}

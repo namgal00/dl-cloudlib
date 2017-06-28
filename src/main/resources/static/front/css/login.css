@@ -1,0 +1,78 @@
+body{margin:0px auto; background-color:#2883af;  padding: 0px;width:100%; background-image:url(../imgs/login_bgddd2.gif); background-repeat:repeat-x;}
+body.ligth{background:#C7E0FA;}
+.header{ height:90px; width:900px; margin:0px auto;}
+.header .logo{ background-image:url(../imgs/logoddd.gif); margin-top:12px; float:left; width:600px; height:70px; background-repeat:no-repeat;}
+
+.main{ width:900px; margin:0px auto; position:relative;}
+.maindiv{
+	z-index:9999;
+	position:absolute;
+	right:90px;
+	background-color: #FFFFFF;
+	width:400px;
+	height:260px;
+	margin:0px auto;
+	border:1px solid #6e9ecf;
+	margin-top:100px;
+	top: 2px;
+}
+.main .book{ position:absolute; left:40px; width:330px; height:255px; top:120px; z-index:99; background-image:url(../imgs/bookddd.gif);}
+.main .back{ position:absolute; top:150px; width:100%; background-image:url(../imgs/backddd.gif); height:170px;}
+.maindiv .top{ background-repeat:repeat-x; width:100%; height:50px;}
+.onepx{ background-color:#c4dbed; font-size:0px; width:95%; height:1px; margin:0px auto;}
+.maindiv .top .left{ background-image:url(../imgs/userlogin.gif); float:left; width:136px; height:34px; margin:5px 0px 0px 5px;}
+.maindiv .top .right{  float:right; width:362px; height:70px;}
+.maindiv .top .right a{ float:right; margin:15px 15px 2px 0px; color:#777777; font-size:12px;}
+.maindiv .mid{ position:relative; width:100%; height:220px; }
+.maindiv .mid .pic{ position:absolute; right:10px; top:0px; width:313px; height:220px; background-image:url(../imgs/mid_bgddd.jpg);}
+.main .copyright{ width:100%; text-align:center; height:30px; position:absolute; top:600px;color:#79a4c7; line-height:30px;  font-size:12px; }
+.maindiv .mid .table_login{
+	position:absolute;
+	top:18px;
+	left:1px;
+}
+.maindiv .mid .table_login2{
+	position:absolute;
+	top:45px;
+	left:1px;
+}
+.maindiv .mid table tr td{  color:#5187b6; font-size:12px;}
+.maindiv .mid table tr td.line{border-bottom:1px dashed #2c7c04;}
+.maindiv .mid table tr td input{color:#333; font-size:12px; width:200px; height:16px; border:1px solid #bec2c5;}
+.maindiv .mid table tr td .button_ssL{ float:left; border:none;width:65px; height:24px; margin:2px 4px 2px 4px; cursor:pointer;}
+.maindiv .mid table tr td .button_cz{ float:right; border:none;width:65px; height:24px; margin:2px 4px 2px 4px; background-image:url(../imgs/czddd.gif);cursor:pointer;}
+.maindiv .mid table tr td .button_dl{ float:right; border:none;width:65px; height:24px; margin:2px 4px 2px 4px; background-image:url(../imgs/dl1ddd.gif); cursor:pointer;}
+.maindiv .mid table tr td .button_dl2{ float:right; border:none;width:65px; height:24px; margin:2px 114px 2px 4px; background-image:url(../imgs/dl1ddd.gif); cursor:pointer;}
+.maindiv .mid table tr td .button_dl1{border:none;width:65px; height:24px;  background-image:url(../imgs/dl1ddd.gif); cursor:pointer;}
+.maindiv .mid table tr td .button_style2{ cursor:pointer;float:right; border:none;width:79px; height:20px; margin:2px 4px 2px 4px;}
+.maindiv .mid table tr td .button_style3{ cursor:pointer;float:right; border:none;width:119px; height:20px; margin:2px 4px 2px 4px;}
+.maindiv .mid table tr td .mmzh{ background-image:url(../imgs/mmzhddd.gif);}
+.maindiv .mid table tr td .yhzc{ background-image:url(../imgs/yhzcddd.gif);}
+.maindiv .mid table tr td .hqjhm{ background-image:url(../imgs/hqyjjhm.gif);}
+.ico_attention{ background-image:url(../imgs/attention.gif); background-repeat:no-repeat; width:20px; height:20px; float:left;}
+.header2{background-image: url("../imgs/header_bg.gif");background-repeat:repeat-x;height:80px;width:100%;}
+.topic2{background-image:url("../imgs/logo_lib.gif");float: left;height:49px;width: 400px;}
+.maindiv .mid table tr td .button_background{background-image:url("../imgs/btn_ground.gif");font-size:12px;color:#ffffff;}
+.maindiv .mid table tr td .button_background1{background-image:url("../imgs/btn_ground.gif");font-size:12px;color:#ffffff;}
+.fst_title {
+    background-image: url("../imgs/fst_title.gif");
+    color: #222266;
+    font-size: 14px;
+    font-weight: bold;
+    height: 30px;
+    line-height: 30px;
+    margin: 5px 0;
+    text-indent: 10px;
+    width: 100%;
+}
+.ico_fst_title {
+    background-position: -20px -40px;
+    margin-left: 5px;
+    margin-top: 5px;
+}
+.ico {
+    background-image: url("../imgs/icos.gif");
+    float: left;
+    height: 20px;
+    width: 20px;
+}
