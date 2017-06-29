@@ -1,0 +1,6 @@
+2017-6-29
+王芳
+1.修改了BookBatch,BookApply,Book实体类
+2.修改/新建：t_teacher_book_apply,t_teacher_book_batch数据表
+3.修改电子书订购页面，电子书详情页面，电子书批次查看订购电子书的页面
+4.页面还没有合并
