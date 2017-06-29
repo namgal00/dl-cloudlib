@@ -1,11 +1,9 @@
 package com.yundao.cloudlib.model;
 
-import java.util.Date;
+import java.math.BigDecimal;
 
 import javax.persistence.Column;
 import javax.persistence.Table;
-
-import org.springframework.format.annotation.DateTimeFormat;
 
 import framework.excel.ExcelResources;
 import framework.model.BaseEntity;
@@ -72,6 +70,12 @@ public class Book extends BaseEntity {
 	 */
 	@Column(nullable = false)
 	private Boolean free;
+	
+	/**
+	 * 单价
+	 */
+	@Column(nullable = false)
+	private BigDecimal price;
 
 	/******** link *********/
 

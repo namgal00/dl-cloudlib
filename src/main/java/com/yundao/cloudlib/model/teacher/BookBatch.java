@@ -34,6 +34,32 @@ public class BookBatch extends BaseEntity {
 	 */
 	@Column(name = "price", nullable = true)
 	private BigDecimal price;
+	/**
+	 * 联系人
+	 */
+	@Column(name = "contact", nullable = true)
+	private String contact;
+	/**
+	 * 联系方式
+	 */
+	@Column(name = "contact_way", nullable = true)
+	private String contactWay;
+	
+	public String getContact() {
+		return contact;
+	}
+
+	public void setContact(String contact) {
+		this.contact = contact;
+	}
+
+	public String getContactWay() {
+		return contactWay;
+	}
+
+	public void setContactWay(String contactWay) {
+		this.contactWay = contactWay;
+	}
 
 	public Long getSchoolId() {
 		return schoolId;

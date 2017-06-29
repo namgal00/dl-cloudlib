@@ -1,5 +1,7 @@
 package com.yundao.cloudlib.model.teacher;
 
+import java.math.BigDecimal;
+
 import javax.persistence.Column;
 import javax.persistence.Table;
 
@@ -30,22 +32,77 @@ import framework.model.BaseEntity;
  * @date: 2017年6月27日 上午10:59:20
  * @version 1.0
  */
-@Table(name = "t_book_apply")
+@Table(name = "t_teacher_book_apply")
 public class BookApply extends BaseEntity {
 	/*
 	 * 学校Id
 	 */
 	@Column(name = "school_id", nullable = false, unique = true)
 	private Long schoolId;
+	
+	/*
+	 * 订单批次Id
+	 */
+	@Column(name = "book_batch_id", nullable = false, unique = true)
+	private Long bookBatchId;
 
 	/*
 	 * 书Id
 	 */
 	@Column(name = "book_id", nullable = false, unique = true)
 	private Long bookId;
+	
+	/*
+	 * isbn
+	 */
+	@Column(nullable = false, unique = true)
+	private String isbn;
+	/*
+	 * 题名
+	 */
+	@Column(nullable = false, unique = true)
+	private String title;
+	/*
+	 * 出版社
+	 */
+	@Column(nullable = false, unique = true)
+	private String press;
+	/*
+	 * 作者
+	 */
+	@Column(nullable = false, unique = true)
+	private String author;
+	/*
+	 * 出版时间
+	 */
+	@Column(name = "publication_date", nullable = false, unique = true)
+	private String publicationDate;
+	/*
+	 * 分类号
+	 */
+	@Column(nullable = false, unique = true)
+	private String classification;
+	/*
+	 * 文件地址
+	 */
+	@Column(nullable = false)
+	private String path;
+	
+	/*
+	 * 单价
+	 */
+	@Column(nullable = false)
+	private BigDecimal price;
+	
+	/*
+	 * 副本数
+	 */
+	@Column(name="book_replication",nullable = false)
+	private Long bookReplication;
+	
 
 	/*
-	 * 申请状态：DEALING("待处理"),PASS("申请通过"),NOPASS("申请不通过")
+	 * 申请状态：NOTSUBMIT("未提交"),DEALING("待处理"),PASS("申请通过"),NOPASS("申请不通过")
 	 */
 	@Column(name = "apply_status", nullable = false, unique = true)
 	private BookApplyType applyStatus;

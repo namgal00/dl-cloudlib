@@ -9,7 +9,7 @@ package com.yundao.cloudlib.model.enumType;
  * @version 1.0
  */
 public enum BookApplyType {
-	DEALING("待处理"), PASS("申请通过"), NOPASS("申请不通过");
+	NOTSUBMIT("未提交"),DEALING("待处理"), PASS("申请通过"), NOPASS("申请不通过");
 	private BookApplyType(String name) {
 		this.name = name;
 	}
