@@ -132,7 +132,7 @@ border-bottom: 1px solid #E7EBEF;
 					</div>
 
 					<div class="mCon" style="display: block;">
-						<a href="${base }/teachernew/common/swich"
+						<a href="${base }/teachernew/bookOrder/bookList"
 							class="mCon_a" target="main">图书预订处理</a>
 					</div>
 

@@ -18,4 +18,9 @@ public class BookOrderController {
 	public String order(){
 		return "/teacher-new/bookOrder/order";
 	}
+	
+	@RequestMapping("/bookList")
+	public String bookList(){
+		return "/teacher-new/bookOrder/bookList";
+	}
 }
