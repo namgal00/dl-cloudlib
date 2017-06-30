@@ -77,6 +77,14 @@ public class Book extends BaseEntity {
 	@Column(nullable = false)
 	private BigDecimal price;
 
+	public BigDecimal getPrice() {
+		return price;
+	}
+
+	public void setPrice(BigDecimal price) {
+		this.price = price;
+	}
+
 	/******** link *********/
 
 	@Column(name = "batch_id", nullable = false)
