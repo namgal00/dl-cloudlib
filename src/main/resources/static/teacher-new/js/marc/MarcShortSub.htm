@@ -1,0 +1,139 @@
+﻿<HTML>
+<HEAD>
+<META http-equiv=Content-Type content="text/html; charset=UTF-8">
+<META http-equiv="Pragma" content="no-cache"/>
+<TITLE>定长字段编辑</TITLE>
+<script src="http://localhost:8080/cloudlib-school-web/js/jquery.js" type="text/javascript"></script>
+<link rel="stylesheet" href="../../style/style1.css"/>
+<SCRIPT language="javascript">
+	
+	
+function doInit(){
+  if(window.dialogArguments!=null){
+       		listArray(window.dialogArguments);
+  }
+  window.returnValue=-1;
+  document.forms[0].Button2.focus();
+}
+	
+var init=new function(){
+	if(window.dialogArguments!=null){
+		var subjectArray = window.dialogArguments;
+		window.document.title="选择内容("+$(subjectArray).attr("describe")+")";
+	}
+}
+var global_totalCheckLength=0;
+var golbal_addafter="";
+//这个html文件只是用来checkbox。所以下面不再多做判断了。
+function listArray(subjectArray){
+	var _describe=$(subjectArray).attr("describe");
+	var _length=$(subjectArray).attr("length");//4
+	global_totalCheckLength=_length;
+	var _addafter=$(subjectArray).attr("addafter");//addafter
+	golbal_addafter=_addafter;
+	var _defvalue=$(subjectArray).attr("defvalue");
+	var _oldvalue=$(subjectArray).attr("oldvalue");
+	////="4" addafter=" " defvalue="m" oldvale
+	var dynamicTableObj=$("#dynamicTable");
+	var rowIdx=-1;//加载在最后。
+	var tmpEle;
+	var nodeList=$(subjectArray).find("SUB");
+	$(nodeList).each(function(i){
+		var _type=$(this).attr("type");
+		var _key=$(this).attr("key");
+		var _value=$(this).attr("value");
+		
+		var tr = $("<tr></tr>");
+		tr.appendTo(dynamicTableObj);
+		var td = $("<td></td>");
+		td.appendTo(tr);
+		var xxT='<input type="checkbox" name="subfield" ';
+		if(_oldvalue!=null&&_oldvalue!=''&&_oldvalue.indexOf(_key)>-1){//这里不用判断defvalue了。因为直接取上一个窗口中text的内容
+			xxT=xxT+'checked';
+		}
+		xxT=xxT+' onclick="javascript:isCanMoreCheck(this,'+_length+')" value="'+_key+'"/>';
+		if(_key==_value){
+			xxT=xxT+_value;
+		}else{
+			xxT=xxT+(_key+' -- '+_value);
+		}
+		td.html(xxT);
+		
+	});
+}
+function isCanMoreCheck(thisObj,totalCheckedTimes){
+	var checkTimes=new Number(0);
+	var xxObj=document.getElementsByName(thisObj.name);
+	for(var i=0;i<xxObj.length;i++){
+		if(xxObj[i].checked){
+			checkTimes++;
+		}
+	}
+	if(checkTimes>totalCheckedTimes){
+		thisObj.checked=false;
+	}
+}
+function tidyClassnoStr(oldStr){
+	var newStr="";
+	if(oldStr.indexOf("|")!=-1){
+		newStr=oldStr.substring(0,oldStr.indexOf("|"));
+	}else{
+		newStr=oldStr;
+	}
+	return newStr;
+}
+function doCancel()
+{
+   window.returnValue=-1; 
+   window.close();
+}
+
+function doOK(){
+	var returnStr=new String();
+	var countNum=new Number(0);
+	var xxObj=document.getElementsByName("subfield");
+	
+	for(var i=0;i<xxObj.length;i++){
+		if(xxObj[i].checked){
+			returnStr=returnStr+xxObj[i].value;
+		}
+	}
+	//这里不用考虑了。
+	//while(golbal_addafter!=""&&returnStr.length<global_totalCheckLength&&global_totalCheckLength<500){
+	//	returnStr=returnStr+golbal_addafter;
+	//}
+	window.returnValue=returnStr;
+  	window.close();
+}
+
+function isAllChecked(){
+	var xxy=true;
+	var xxObj=document.getElementsByName("subjectCheckbox");
+	for(var i=0;i<xxObj.length;i++){
+		if(xxObj[i].checked){
+		}else{
+			xxy=false;
+		}
+	}
+	return xxy;
+}
+</SCRIPT>
+</HEAD>
+
+<body onload="javascript:doInit();">
+<div STYLE="margin-left:20;margin-top:5">
+<form name="form1" onsubmit="javascript:return(false)">
+	
+	<table name="dynamicTable" id="dynamicTable" bgcolor="#EEFFEE" border="1" width="90%">
+	
+	</table>
+	<div align="center">
+        <!--input type="checkbox" name="allSelCheckbox" onclick="javascript:selAllCheckbox(this)" name="selAll" value="ddd"/>全选-->
+        <input accessKey="Y" class="button" type="button" name="Button2" value="确定(Y)" onClick="doOK()"/>
+	<input accessKey="C" class="button" type="button" name="Button" value="取消(C)" onClick="doCancel()"/>
+	<input accessKey="R" class="button" type="reset" name="Button" value="重置(R)"/>
+	</div>
+</form>
+</div>
+</body>
+</HTML>

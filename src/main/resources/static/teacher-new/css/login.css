@@ -1,0 +1,127 @@
+
+
+body {background: url(../images/login/login_bg.jpg) repeat-x top center #fff;}
+.table {width: 100%;
+       height: 100%;
+	   position: relative;
+	   z-index: 10;}
+.table td {
+	width: 100%;
+	height: 100%;
+}
+.light {width: 100%;}
+.login {
+	width: 481px;
+	height: 450px;
+	padding:130px 0 0;
+	margin: 0 auto;
+	overflow: hidden;
+	position:relative;
+	background: url(../images/login/login_book.png) no-repeat;}
+.login table{width:245px;
+             height:150px;
+			 margin:0 auto;}	
+	
+.login ul{width:245px;
+          height:auto;
+		  overflow:hidden;
+		  margin:0 atuo;}
+.login li{margin-bottom:8px;
+          *margin-bottom:6px!important;
+		  *margin-bottom:6px;}		  
+.L_name, .L_pass, .L_yanz{
+        width:54px;
+		height:20px;
+		float:left;
+		margin:5px 8px 0 0;
+		_margin:5px 4px 0 0;
+		display:inline;}
+.L_name{background:url(../images/login/login_name.png) no-repeat;}		
+.L_pass{background:url(../images/login/login_pass.png) no-repeat;}
+.L_yanz{background:url(../images/login/login_yanz.png) no-repeat;}				  
+
+.login li input{background:url(../images/login/login_inputbg.gif);
+                width:159px;
+				height:27px;
+				padding:3px 10px 0;
+				border:none;}	
+				
+.login .input input{background:url(../images/login/login_inputbg2.gif);
+       width:62px;
+	   height:27px;
+	   padding:3px 10px 0;
+	   overflow:hidden;
+	   border:none;}
+	   
+.tool{padding:0 0 0 62px; color:#fff;}
+.login .tool input{background:none; border:none; float:left; display:inline;}
+.login .tool .btn{background:url(../images/login/login_btn.png) no-repeat;
+     width:85px;
+	 height:32px;
+	 overflow:hidden;
+	 cursor:pointer;}
+.login .tool .checkbox{width:16px;
+					   height:17px;
+					   overflow:hidden;
+					   padding:0;
+					   margin:5px 5px 0;}	 	   				
+.tool cite{padding:0; margin:5px 0 0; float:left; display:block;}				
+				
+
+
+.comp_login {
+	width: 481px;
+	height: 347px;
+	padding:253px 0 0;
+	margin: 0 auto;
+	overflow: hidden;
+	position:relative;
+	background: url(../images/login/comp_login.png) no-repeat;}
+.comp_login table{width:245px;
+             height:150px;
+			 margin:0 auto;}	
+	
+.comp_login ul{width:245px;
+          height:auto;
+		  overflow:hidden;
+		  margin:0 atuo;}
+.comp_login li{margin-bottom:8px;
+          *margin-bottom:6px!important;
+		  *margin-bottom:6px;}		  
+.L_name, .L_pass, .L_yanz{
+        width:54px;
+		height:20px;
+		float:left;
+		margin:5px 8px 0 0;
+		_margin:5px 4px 0 0;
+		display:inline;}
+.L_name{background:url(../images/login/login_name.png) no-repeat;}		
+.L_pass{background:url(../images/login/login_pass.png) no-repeat;}
+.L_yanz{background:url(../images/login/login_yanz.png) no-repeat;}				  
+
+.comp_login li input{background:url(../images/login/login_inputbg.gif);
+                width:159px;
+				height:27px;
+				padding:3px 10px 0;
+				border:none;}	
+				
+.comp_login .input input{background:url(../images/login/login_inputbg2.gif);
+       width:62px;
+	   height:27px;
+	   padding:3px 10px 0;
+	   overflow:hidden;
+	   border:none;}
+	   
+.tool{padding:0 0 0 62px; color:#fff;}
+.comp_login .tool input{background:none; border:none; float:left; display:inline;}
+.comp_login .tool .btn{background:url(../images/login/comp_login_btn.png) no-repeat;
+     width:85px;
+	 height:32px;
+	 overflow:hidden;
+	 cursor:pointer;}
+.comp_login .tool .checkbox{width:16px;
+					   height:17px;
+					   overflow:hidden;
+					   padding:0;
+					   margin:5px 5px 0;}	 	   				
+.tool cite{padding:0; margin:5px 0 0; float:left; display:block;}	

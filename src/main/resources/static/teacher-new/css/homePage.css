@@ -1,0 +1,168 @@
+html,body{
+	font-family: "微软雅黑";
+	background-color: #efefef;
+	margin: 0px;
+	padding: 0px;
+	font-size: 12px;
+	height: 100%;
+	min-width: 1150px;
+}
+ul,li{
+	list-style: none;
+	padding: 0px;
+	margin: 0px;
+}
+
+/*public header*/
+header{
+	background: #1f262e;
+	height: 121px;
+	min-width:1150px;
+}
+header h1{
+	float: left;
+	height: 121px;
+	width: 314px;
+	margin: 0px;
+	border-right:1px solid #000;
+}
+header h1 a{
+	height: 121px;
+	display: block;
+	text-indent: -9999px;
+	background: url(../img/logo.png);
+}
+header h1 a:hover{
+	opacity: 0.7;
+	background-color: #101418;
+}
+header ul{
+	border-right:1px solid #2e363f;
+	float: left;
+	overflow: auto;
+}
+header ul li{
+	float: left;
+	height: 121px;
+	 border-left:1px solid #2e363f;
+	 border-right:1px solid #000;
+}
+header ul li a{
+	color:#FFF;
+	text-decoration: none;
+	width: 160px;
+	padding: 0px;
+	text-align: center;
+	display: block;
+	height: 121px;
+}
+header ul li a:hover{
+	color:#ccc;
+	background: #101418;
+}
+header ul li a:hover span{opacity: 0.7;}
+header ul li span{
+	display: block;
+	padding-top:27px;
+	text-align: center;
+}
+header div{
+	float: right;
+	width: 250px;
+	text-align: right;
+	padding-top:10px;
+	line-height: 28px;
+}
+header div a{
+	color: #FFF;
+	text-decoration: none;
+	display: inline-block;
+	width: 40px;
+	text-align: center;
+	border-left:1px solid #2e363f;
+	border-right:1px solid #000;
+	font-size: 20px;
+}
+header div a:hover{color: #999;}
+header div a:first-child{border-left:0px;}
+header div span{
+	display: inline-block;
+	padding-top:40px;
+	color: #bcbdbe;
+	padding-right: 10px;
+}
+.search{
+	overflow:auto;
+	border-bottom:1px solid #666;
+	padding:15px;
+}
+.search section{
+	height:40px;
+	border:1px solid #CCC;
+	line-height:40px;
+	background:#FFF
+}
+.search section span{
+	display:inline-block;
+	padding:0px 15px;
+	background:#e6e6e6
+}
+.search section input{
+	width:130px;
+	border: 1px solid #CCC;
+	height: 26px;
+	text-indent: 5px;
+	padding: 0px;
+	margin: 0px;
+	outline:#CCAA00;
+}
+.search section input:focus,.search section input:hover{
+	border: 1px solid #156CCC;
+}
+.search section button {
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    height: 28px;
+	border: 1px solid #a64e00;
+	/*����*/
+	/* Firefox */
+	background-image: -moz-linear-gradient(top, #feca00, #fc6100); 
+	/* Saf4+, Chrome */
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #feca00), color-stop(1, #fc6100)); 
+	/* IE*/
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#feca00', endColorstr='#fc6100' GradientType='0'); 
+}
+.search section button:hover{
+	/* Firefox */
+	background-image: -moz-linear-gradient(top, #fc6100, #feca00); 
+	/* Saf4+, Chrome */
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fc6100), color-stop(1, #feca00)); 
+	/* IE*/
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fc6100', endColorstr='#feca00' GradientType='0'); 
+}
+.statistic{
+	padding:15px;
+	padding-top:0px;
+}
+.statistic ul,.statistic li{
+	list-style:none;
+	padding:0px;
+	margin:0px;
+	overflow:auto;
+}
+.statistic li{
+	float:left;
+	width:50%;
+	padding-top:15px;
+}
+.statistic li div.piece{
+	width: calc(100% - 8.5px);
+	height: 400px;
+    float:left;
+    background:#FFF;
+    /*border:1px solid #CCC;*/
+}
+.statistic li:nth-child(2n) div {
+    float:right;
+}

@@ -1,0 +1,52 @@
+@charset "utf-8";
+
+.ctDialogDiv {
+	border: 0px solid #EEE;
+	font-size: 12px;
+	visibility: hidden;
+	left: 0;
+	top: 0;
+	position: absolute;
+	overflow: hidden;
+}
+
+.ctDialogDiv .head1 {
+	color: #FFF;
+	height: 26px;
+	line-height: 26px;
+	border: 1px solid #1467B8;
+	border-bottom: none;
+	padding: 0 10px;
+	background: #377AC9;
+	font-weight: bold;
+}
+
+.ctDialogDiv .head1 .close {
+	cursor: pointer;
+	float: right;
+	height: 18px;
+	line-height: 18px;
+	padding: 0 10px;
+	font-family: Arial, Helvetica, sans-serif;
+	margin-top: 3px;
+}
+
+.ctDialogDiv .body1 {
+	border: 1px solid #1467B8;
+	border-top: none;
+	padding: 10px;
+	background: #FFF;
+}
+
+.ctDialogDiv .alphaBg {
+	position: absolute;
+	z-index: -1;
+	width: 1999px;
+	height: 1999px;
+	filter: alpha(opacity = 40);
+	opacity: 0.4;
+	left: 0;
+	top: 0;
+	background-color: #999;
+}
+/* CSS Document */

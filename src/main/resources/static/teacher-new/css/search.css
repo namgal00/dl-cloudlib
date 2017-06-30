@@ -1,0 +1,163 @@
+
+.search_simple {
+    height: auto;
+    margin: 100px auto 0;
+    overflow: hidden;
+    width: 760px;
+}
+.search_simple h1 {
+    color: #0b6c90;
+    font-family: Microsoft YaHei;
+    font-size: 36px;
+    font-weight: normal;
+    height: 60px;
+    margin: 0 auto;
+    overflow: hidden;
+    padding-bottom: 20px;
+    width: auto;
+}
+.search_simple h1 img {
+    vertical-align: middle;
+}
+.search_simple .text {
+    width: 340px;
+}
+.search_simple h3 {
+    clear: both;
+    color: #0b6c90;
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 30px;
+    text-align: left;
+}
+.search_note {
+    background: none repeat scroll 0 0 #fbf9e4;
+    border: 1px solid #e4d57c;
+    color: #564e46;
+    height: auto;
+    line-height: 24px;
+    margin: 15px 0 20px;
+    overflow: hidden;
+    padding: 15px;
+    text-align: left;
+    width: 726px;
+}
+.search_note h2 {
+    color: #b49d30;
+    font-size: 20px;
+}
+#form_type, #form_more {
+    cursor: pointer;
+}
+.form_type {
+    margin-top: 15px;
+}
+.form_more {
+}
+.search_simple ul {
+    clear: both;
+    margin-left: 10px;
+    text-align: left;
+}
+.search_simple ul li {
+    clear: both;
+    height: 30px;
+}
+.search_simple ul li span {
+    color: #424242;
+    display: block;
+    float: left;
+}
+.search_simple ul li font {
+    display: block;
+    float: left;
+    width: 140px;
+}
+.search_simple ul li select {
+    width: 120px;
+}
+.search_simple .search_est_form {
+    clear: both;
+    color: #206b89;
+    height: auto;
+    margin-left: 10px;
+    overflow: hidden;
+    text-align: left;
+    width: 658px;
+}
+.search_simple .search_est_form li {
+    display: inline;
+    float: left;
+    height: auto;
+    line-height: 30px;
+    overflow: hidden;
+}
+.search_simple .search_est_form li select {
+    height: 22px;
+    overflow: hidden;
+}
+.search_simple .search_est_form li input {
+    border: 1px solid #ddd;
+    height: 20px;
+    overflow: hidden;
+}
+.li_1 {
+    width: 60px;
+}
+.li_1 select {
+    width: 50px;
+}
+.li_2 {
+    width: 100px;
+}
+.li_2 select {
+    width: 90px;
+}
+.li_3 {
+    width: 260px;
+}
+.li_3 input {
+    margin-bottom: 8px;
+    width: 250px;
+}
+.li_4 {
+    width: 100px;
+}
+.li_4 input {
+    background: url("../images/btn_bg.png") repeat-x scroll center bottom rgba(0, 0, 0, 0);
+    cursor: pointer;
+    margin-bottom: 10px;
+    width: 50px;
+}
+.li_4 select {
+    width: 50px;
+}
+.select-outer {
+    background: none repeat scroll 0 0 #fff;
+    border: 1px solid #ccc;
+    display: inline-block;
+    float: left;
+}
+.select-inner {
+    display: inline-block;
+    height: 18px;
+    overflow: hidden;
+    position: relative;
+}
+.select-h {
+    border: 1px solid #ccc;
+    font-size: 12px;
+    height: 22px;
+    margin: -1px;
+    position: relative;
+}
+.select-wh200 {
+    padding: 4px;
+}
+.select-wh200 .select-inner {
+    width: 105px;
+    height: 20px;
+}
+.select-wh200 select {
+    width: 107px;
+}

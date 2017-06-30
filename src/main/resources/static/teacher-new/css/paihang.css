@@ -1,0 +1,105 @@
+@CHARSET "UTF-8";
+
+.main {
+	margin: 0 auto;
+	width: 1500px;
+	margin-top: 90px;
+	height: 1000px;
+}
+
+.title {
+	border-bottom: 2px solid #7da825;
+	color: red;
+	float: left;
+	font-size: 16px;
+	padding-top: 20px;
+	text-align: center;
+	width: 60px;
+}
+
+.fl {
+	padding-left: 260px;
+	padding-top: 23px;
+}
+
+.lis {
+	border-bottom: 2px solid #f0f0f0; ! important;
+	width: 400px;
+	float: left;
+}
+
+.pai {
+	border-bottom: 2px solid #f0f0f0; ! important;
+	width: 400px;
+	height: 30px;
+	padding-top: 10px;
+}
+
+.pai_1 {
+	border-bottom: 2px solid #f0f0f0; ! important;
+	width: 400px;
+	height: 30px;
+	padding-top: 70px;
+}
+
+.item_l {
+	float: left;
+}
+
+.icon_top {
+	background-color: #fe7012;
+	color: #fff;
+	font-style: normal;
+	line-height: 20px;
+	width: 20px;
+	text-align: center;
+	display: inline-block;
+	font-size: 12px;
+}
+
+.icon_top_other {
+	background-color: #f3f3f3;
+	color: #999;
+	font-style: normal;
+	line-height: 20px;
+	width: 20px;
+	text-align: center;
+	display: inline-block;
+	font-size: 12px;
+}
+
+.item_r {
+	float: right;
+	padding-right: 1px;
+}
+
+.week {
+	float: left;
+	width: 400px;
+	background: white;
+	padding-left: 50px;
+	margin-top: 20px;
+	margin-left: 20px
+}
+
+.month {
+	float: left;
+	width: 400px;
+	background: white;
+	padding-left: 50px;
+	margin-top: 20px;
+	margin-left: 20px
+}
+
+.all {
+	float: left;
+	width: 400px;
+	background: white;
+	padding-left: 50px;
+	margin-top: 20px;
+	margin-left: 20px
+}
+
+.link_sort {
+	color: #7fb52b;
+}

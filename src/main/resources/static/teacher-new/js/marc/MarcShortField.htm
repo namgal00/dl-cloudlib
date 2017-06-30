@@ -1,0 +1,220 @@
+﻿<HTML>
+<HEAD>
+<META http-equiv=Content-Type content="text/html; charset=UTF-8">
+<META http-equiv="Pragma" content="no-cache"/>
+<TITLE>定长字段编辑</TITLE>
+<script src="http://localhost:8080/cloudlib-school-web/js/jquery.js" type="text/javascript"></script>
+<SCRIPT language="javascript">
+function doInit(){
+	if(window.dialogArguments!=null){
+       		listArray(window.dialogArguments);
+  }
+  window.returnValue=-1;
+  document.forms[0].Button2.focus();
+}
+var init=new function(){
+	if(window.dialogArguments!=null){
+		var xmlObj = window.dialogArguments;
+		window.document.title="MARC定长字段编辑("+$(xmlObj).attr("title")+")";
+	}
+}
+//打开一个新的窗口
+function openNewTmpWin(thisObj,fieldPosition){
+	//thisObj.parentElement.children(0).outerHTML
+	//var textObj=thisObj.parentElement.childNodes(0);
+	var xmlObj=window.dialogArguments
+	var textObj = $(thisObj).prev().val();
+	if(xmlObj!=null){
+		var nodeList=$(xmlObj).find("FIELD");
+		var fieldEle=nodeList.eq(fieldPosition);
+		
+		
+		$(fieldEle).attr("oldvalue",textObj);
+		var ooWin=showModalDialog("http://localhost:8080/cloudlib-school-web/js/marc/MarcShortSub.htm",fieldEle,"dialogWidth:450px;dialogHeight:450px");
+		if(typeof(ooWin)=="string"){
+			$(thisObj).prev().val(ooWin);
+		}
+	}
+}
+function lengthadd(Str)
+{	
+	var addStr=new String(Str);
+	if(addStr.length == 1)addStr ="0" + addStr;
+	
+	return addStr;
+}
+function getDate()//get date String
+{
+	var curtime =new Date();
+	var today =curtime.getFullYear()+""+lengthadd(curtime.getMonth()+1)+""+lengthadd(curtime.getDate());
+	return today;
+	
+}
+//获取相对应位置的原始值。如果没有原始值，或者原始值为空则按照默认值
+
+function getIndexPositionValue(beforeLength,thisFieldLength,oldValue,_defValue){
+	_defValue=_defValue.replace("yyyymmdd",getDate());//中文100字段会需要到今天的当前时间
+	oldValue=oldValue.replace("yyyymmdd",getDate());
+	
+	_defValue=_defValue.replace("yymmdd",getDate().substring(2));//西文008字段会需要到今天的当前时间
+	oldValue=oldValue.replace("yymmdd",getDate().substring(2));
+	
+	var returnValue="";
+	if(oldValue!=''){
+		returnValue=oldValue.substring(beforeLength,(new Number(beforeLength)+new Number(thisFieldLength)));
+	}else{
+		returnValue=_defValue;
+	}
+	return returnValue;
+}
+function listArray(subjectArray){
+	var dynamicTableObj=$("#dynamicTable");
+	var _oldvalue = $(subjectArray).attr("oldvalue");
+	var beforeLength=new Number(0);
+
+	
+	$(subjectArray).find("FIELD").each(function(i){
+		var _describe=$(this).attr("describe");
+		var _type=$(this).attr("type");
+		var _length=$(this).attr("length");
+		var _addafter=$(this).attr("addafter");
+		var _defvalue=$(this).attr("defvalue");
+		var sublist=$(this).find("SUB");
+		//alert(_describe+_type+_length+addafter+_defvalue);
+		var tr=$("<tr></tr>");
+		tr.appendTo(dynamicTableObj);
+		var td = $("<td></td>").html(_describe);
+		td.appendTo(tr);
+		var td2 = $("<td></td>");
+		td2.appendTo(tr);
+
+		//应该显示的值
+		var mayBeTheVAlue=getIndexPositionValue(beforeLength,_length,_oldvalue,_defvalue);
+		
+		var newObj=null;
+		if(_type=="date"){
+			var _tmp_html_str="<INPUT TYPE='text' NAME='field' maxlength='"+_length+"' VALUE='"+mayBeTheVAlue+"'/>";
+			newObj = $(_tmp_html_str);
+		}else if(_type=="text"){
+			newObj = $("<INPUT TYPE='text' maxlength='"+_length+"' NAME='field' VALUE='"+mayBeTheVAlue+"'/>");
+			
+		}else if(_type=="select"){
+			newObj = $("<select NAME='field' VALUE='"+mayBeTheVAlue+"'/>");
+		}else{
+			if(!isNaN(new Number(_length))){
+				beforeLength=beforeLength+new Number(_length);
+			}
+			return true;//后面的不执行
+		}
+		if(!isNaN(new Number(_length))){
+			beforeLength=beforeLength+new Number(_length);
+		}
+		
+
+		//下面是添加子部分
+		var subType1 = $(this).find("SUB[type=checkbox]");
+		if(subType1.length>0){
+			var _tmpObj = $("<input class='button' type='button' onclick='javascript:openNewTmpWin(this,"+i+");' value='选择'/>");
+			newObj.appendTo(td2);
+			newObj.attr("disabled",true);
+			_tmpObj.appendTo(td2);
+			return true;//后面的不执行
+		}
+		var subType2 = $(this).find("SUB[type=option]");
+		if(subType2.length>0){
+			$(subType2).each(function(i){
+				var _subtype=$(this).attr("type");
+				var _subkey=$(this).attr("key");
+				var _subvalue=$(this).attr("value");
+				var option = $("<option></option>");
+				if(_subvalue==_subkey){
+					option.html(_subvalue);
+				}else{
+					option.html(_subkey+" -- "+_subvalue);
+				}
+				option.attr("value",_subkey);
+				option.appendTo(newObj);
+			});
+		}
+		newObj.attr("value",mayBeTheVAlue);
+		newObj.appendTo(td2);
+		
+	});
+	
+}
+
+function doCancel()
+{
+   window.returnValue=-1; 
+   window.close();
+}
+
+function doOK(){
+	var returnStr=new String();
+	var countNum=new Number(0);
+	var xxObj=document.getElementsByName("field");
+	var xmlObj=window.dialogArguments
+	var messageText='';
+	if(xmlObj!=null){
+		var nodeList=$(xmlObj).find("FIELD");
+		if(nodeList.length==xxObj.length){
+			$(nodeList).each(function(i){
+				var _describe=$(this).attr("describe");
+				var _type=$(this).attr("type");
+				var _length=$(this).attr("length");
+				var _addafter=$(this).attr("addafter");
+				var _defvalue=$(this).attr("defvalue");
+				var _isnull=$(this).attr("isnull");
+				
+				var thisTextValue=xxObj[i].value;
+
+				while(_addafter!=""&&thisTextValue.length<_length&&thisTextValue.length<500){
+					if(_addafter.indexOf("*")==-1){//如果没有星号默认加在后面
+						thisTextValue=thisTextValue+_addafter;
+					}else{//如果有星号则根据星号做通配符，加在最前面或者最后面，中间暂不处理
+						if(_addafter.indexOf("*")==0&&_addafter.length>1){//首位是星号,表示加在内容后面
+							thisTextValue=thisTextValue+''+_addafter.substring(1);
+						}else if(_addafter.indexOf("*")==(_addafter.length-1)&&_addafter.length>1){//末位是星号，表示加在内容前面
+							thisTextValue=_addafter.substring(0,_addafter.length-1)+''+thisTextValue;
+						}else{//其它情况按默认值来处理，加到最后，
+							thisTextValue=thisTextValue+_addafter;
+						}
+					}
+				}
+				if(thisTextValue.length>_length){
+					thisTextValue=thisTextValue.substr(0,_length);
+				}
+				if(thisTextValue==""&&_isnull=="false"){
+					messageText=messageText+'第'+(i+1)+'行，'+_describe+'不能为空\n';
+				}
+				returnStr=returnStr+thisTextValue;
+				
+			});
+		}
+	}
+	if(messageText!=''){
+		alert(messageText);
+		return;
+	}
+	window.returnValue=returnStr;
+	window.close();
+}
+
+</SCRIPT>
+</HEAD>
+
+<body onload="javascript:doInit();">
+<div STYLE="margin-left:20;margin-top:5">
+<form name="form1" onsubmit="javascript:return(false)">
+	
+	<table name="dynamicTable" id="dynamicTable" bgcolor="#EEFFEE" border="1" width="90%">
+	
+	</table>
+	<div align="center">
+        <input accessKey="Y" class="button" type="button" name="Button2" value="确定(Y)" onClick="doOK()">
+				<input  accessKey="C" class="button" type="button" name="Button" value="取消(C)" onClick="doCancel()">
+	</div>
+</form>
+</div>
+</body>
+</HTML>

@@ -1,0 +1,144 @@
+#fullbg {
+	background-color: gray;
+	left: 0;
+	opacity: 0.5;
+	position: absolute;
+	top: 0;
+	z-index: 3;
+	filter: alpha(opacity =                          50);
+	-moz-opacity: 0.5;
+	-khtml-opacity: 0.5;
+}
+
+#dialog {
+	background-color: #fff;
+	border: 5px solid rgba(0, 0, 0, 0.4);
+	height: 200px;
+	left: 50%;
+	margin: -200px 0 0 -200px;
+	padding: 1px;
+	position: fixed !important;
+	position: absolute;
+	top: 50%;
+	width: 400px;
+	z-index: 5;
+	border-radius: 5px;
+	display: none;
+}
+
+#dialog button {
+	background-image: -moz-linear-gradient(center top, #feca00, #fc6100);
+	border: 1px solid #a64e00;
+	border-radius: 4px;
+	color: #fff;
+	height: 22px;
+	width: 50px;
+	margin-bottom: 10px;
+}
+
+p.close {
+	color: #fff;
+	border: 1px solid #a64e00;
+	border-radius: 4px;
+	height: 24px;
+	width: 40px;
+	line-height: 24px;
+	background-image: -moz-linear-gradient(center top, #feca00, #fc6100);
+	text-align: center;
+	margin-top: 18px;
+	margin-left: 180px;
+}
+
+#dialog p.close a {
+	color: #fff;
+	text-decoration: none;
+}
+
+p.title {
+	margin: 0 0 12px;
+	height: 24px;
+	line-height: 24px;
+	background: #66CCFF;
+	padding-right: 10px;
+	text-align: center;
+	
+}
+
+#dialog .content {
+	position:relative;
+	text-align: center;
+	padding-top : 25px;
+	font-size: 20px;
+	height: 20px;
+}
+
+
+
+
+
+#fullbg1 {
+	background-color: gray;
+	left: 0;
+	opacity: 0.5;
+	position: absolute;
+	top: 0;
+	z-index: 3;
+	filter: alpha(opacity =                          50);
+	-moz-opacity: 0.5;
+	-khtml-opacity: 0.5;
+	overflow: scroll;
+}
+
+#dialog1 {
+	background-color: #fff;
+	border: 5px solid rgba(0, 0, 0, 0.4);
+	height: 400px;
+	left: 50%;
+	margin: -300px 0 0 -300px;
+	padding: 1px;
+	position: fixed !important;
+	position: absolute;
+	top: 50%;
+	width: 800px;
+	z-index: 5;
+	border-radius: 5px;
+	display: none;
+	overflow: scroll;
+}
+
+#dialog1 button {
+	background-image: -moz-linear-gradient(center top, #feca00, #fc6100);
+	border: 1px solid #a64e00;
+	border-radius: 4px;
+	color: #fff;
+	height: 22px;
+	width: 50px;
+	margin-bottom: 10px;
+}
+
+
+p.close1 {
+	color: #fff;
+	border: 1px solid #a64e00;
+	border-radius: 4px;
+	height: 24px;
+	width: 40px;
+	line-height: 24px;
+	background-image: -moz-linear-gradient(center top, #feca00, #fc6100);
+	text-align: center;
+	margin-top: 18px;
+	margin-left: 380px;
+}
+
+#dialog1 p.close1 a {
+	color: #fff;
+	text-decoration: none;
+}
+
+#dialog1 .content {
+	position:relative;
+	text-align: center;
+	padding-top : 25px;
+	font-size: 20px;
+	height: 20px;
+}

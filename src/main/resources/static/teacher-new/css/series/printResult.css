@@ -1,0 +1,32 @@
+/* 由 F12 开发人员工具生成。这可能不是原始源文件的准确表示形式。*/
+body {
+	margin: 0px;
+	padding: 0px;
+	border: 0px currentColor;
+}
+
+p {
+	margin: 0px;
+	padding: 0px;
+}
+
+.pBox {
+	background: rgb(238, 238, 238);
+	border: 1px solid rgb(238, 238, 238);
+	overflow: auto;
+}
+
+.page {
+	background: rgb(255, 255, 255);
+	margin: 0px auto;
+}
+
+.page p {
+	position: relative;
+}
+
+.page p span {
+	position: relative;
+	display: -moz-inline-box;
+	display: inline-block;
+}

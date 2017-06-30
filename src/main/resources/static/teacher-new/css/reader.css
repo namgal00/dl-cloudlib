@@ -1,0 +1,117 @@
+@import url("frame.opac.css");
+
+.reader_title {
+	width: 100%;
+	height: px;
+	overflow: hidden;
+	border-bottom: #1177b7 1px solid;
+}
+
+.reader_title ul {
+	margin: 0 20px;
+}
+
+.reader_title li {
+	float: left;
+	display: inline;
+}
+
+.reader_title li a {
+	color: #666
+}
+
+.reader_title li a:hover {
+	font-weight: bold;
+}
+
+.reader_title img {
+	float: left;
+	display: block;
+	margin: 1px 3px 0 0;
+}
+
+.reader_title_select,.reader_title_hide {
+	width: auto;
+	height: 30px;
+	float: left;
+	overflow: hidden;
+	cursor: pointer;
+}
+
+.reader_title_select span {
+	background: url(../images/reader_tt_select_bg.png) repeat-x;
+	color: #ffffff;
+	float: left;
+	display: block;
+	width: auto;
+	height: 22px;
+	padding: 8px 10px 0;
+	overflow: hidden;
+	font-weight: bold;
+}
+
+.reader_title_select .fleft {
+	background: url(../images/reader_tt_select_left.png) no-repeat;
+	width: 3px;
+	height: 30px;
+	overflow: hidden;
+}
+
+.reader_title_select .fright {
+	background: url(../images/reader_tt_select_right.png) no-repeat;
+	width: 4px;
+	height: 30px;
+	overflow: hidden;
+	float: left;
+}
+
+.reader_title_hide span {
+	float: left;
+	display: block;
+	width: auto;
+	height: 20px;
+	padding: 10px 10px 0;
+	overflow: hidden;
+	background: url(../images/reader_tt_gray_bg.png) repeat-x;
+}
+
+.reader_title_hide .fleft {
+	float: left;
+}
+
+.reader_title_hide .fright {
+	background: url(../images/reader_tt_gray_right.png) no-repeat;
+	width: 4px;
+	height: 30px;
+	overflow: hidden;
+	float: left;
+}
+
+.reader_title_hide .fleft_bg {
+	background: url(../images/reader_tt_gray_left.png) no-repeat;
+	width: 4px;
+	height: 30px;
+	overflow: hidden;
+	float: left;
+}
+
+.reader_title_hide .fright_bg {
+	float: left;
+}
+
+.reader_title_hide span:hover {
+	color: #024380;
+}
+
+.reader_note {
+	background: #f4fafd;
+	border-bottom: #9ac6de 1px solid;
+	padding: 10px 30px;
+	line-height: 22px;
+	color: #627a84;
+}
+
+.reader_note h4 {
+	font-size: 20px;
+	color: #0a729b;
+}
