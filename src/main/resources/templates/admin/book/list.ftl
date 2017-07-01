@@ -96,6 +96,7 @@
 						<th>启用</th>
 						<th>上架</th>
 						<th>免费</th>
+						<th>价格</th>
 
 					</tr>
 					<!--td中的div是为防止显示的字符超出表格高度而定，可在div中加title属性，方便鼠标放上去显示所有标题-->
@@ -129,6 +130,9 @@
 						</td>
 						<td>
 							<div title="${data.free?string("是","否") }">${data.free?string("是","否") }</div>
+						</td>
+						<td>
+							<div title="${data.price }">${data.price }</div>
 						</td>
 					</tr>
 					[/#list] [/#if]

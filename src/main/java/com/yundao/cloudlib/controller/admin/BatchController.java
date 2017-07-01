@@ -1,6 +1,7 @@
 package com.yundao.cloudlib.controller.admin;
 
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.Map;
 
@@ -196,7 +197,7 @@ public class BatchController extends BaseController {
 	 * @return: String
 	 */
 	@RequestMapping(value = "/addBooks", method = RequestMethod.POST)
-	public String addBooks(@RequestParam("fileUpload") MultipartFile multipartFile, Long batchId, Boolean enable, Boolean shelves, Boolean enfree,
+	public String addBooks(@RequestParam("fileUpload") MultipartFile multipartFile, Long batchId, Boolean enable, Boolean shelves, Boolean enfree,BigDecimal price,
 			RedirectAttributes ra) {
 		try {
 			List<Book> books = (List<Book>) ExcelUtil.getInstance().readExcel2ObjsByPath(multipartFile.getInputStream(), Book.class);
@@ -205,6 +206,7 @@ public class BatchController extends BaseController {
 				book.setEnable(enable);
 				book.setFree(enfree);
 				book.setShelves(shelves);
+				book.setPrice(price);
 			}
 			bookService.save(books);
 		} catch (IOException e) {

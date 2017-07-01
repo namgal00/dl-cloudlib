@@ -64,6 +64,12 @@
 							</td>
 						</tr>
 						<tr>
+							<td>价格:</td>
+							<td>
+								<input type="text" name="sum" class="inp" size="10" value="0" onkeyup="if(event.keyCode !=37 && event.keyCode !=39){if(! /^[0-5]{0,1}[0-9]{1}$/ig.test(this.value)){this.value='';}}"/>
+							</td>
+						</tr>
+						<tr>
 							<td></td>
 							<td>
 								<button type="button" onclick="submitForm(this);">确 认</button>
