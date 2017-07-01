@@ -1,0 +1,27 @@
+2017-7-1:
+1.PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd"  
+	我们现在是H5页面 这个是Html的dtd   这个不要加
+2.var base = "/cloudlib";
+	我们页面上不要用这个
+3.我把teacher-new 全部改成了teacher
+4.教师访问页面为/teacher/index
+5.云图跳转的时候先采用培明说的带用户名和密码过来进行验证(现在我先写死一个teacher在index请求中)
+	我这边访问不到数据库 ,你们到时候把teacher的id name schoolId schoolName这个值修改成二高的
+6.添加了老师的拦截器
+7.修改了页面的内容
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

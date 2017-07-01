@@ -20,63 +20,79 @@ import framework.model.BaseEntity;
 public class Book extends BaseEntity {
 
 	private static final long serialVersionUID = -8982808974992840069L;
+
 	/**
 	 * isbn
 	 */
 	@Column(nullable = false, unique = true)
 	private String isbn;
+
 	/**
 	 * 题名
 	 */
 	@Column(nullable = false, unique = true)
 	private String title;
+
 	/**
 	 * 出版社
 	 */
 	@Column(nullable = false, unique = true)
 	private String press;
+
 	/**
 	 * 作者
 	 */
 	@Column(nullable = false, unique = true)
 	private String author;
+
 	/**
 	 * 出版时间
 	 */
 	@Column(name = "publication_date", nullable = false, unique = true)
 	private String publicationDate;
+
 	/**
 	 * 分类号
 	 */
 	@Column(nullable = false, unique = true)
 	private String classification;
+
 	/**
 	 * 文件地址
 	 */
 	@Column(nullable = false)
 	private String path;
+
 	/**
 	 * 是否启用
 	 */
 	@Column(nullable = false)
 	private Boolean enable;
+
 	/**
 	 * 是否上架
 	 */
 	@Column(nullable = false)
 	private Boolean shelves;
+
 	/**
 	 * 是否免费
 	 */
 	@Column(nullable = false)
 	private Boolean free;
-	
+
 	/**
 	 * 单价
 	 */
 	@Column(nullable = false)
 	private BigDecimal price;
 
+	/******** link *********/
+
+	@Column(name = "batch_id", nullable = false)
+	private Long batchId;
+
+	@ExcelResources(order = 8, title = "价格")
 	public BigDecimal getPrice() {
 		return price;
 	}
@@ -84,11 +100,6 @@ public class Book extends BaseEntity {
 	public void setPrice(BigDecimal price) {
 		this.price = price;
 	}
-
-	/******** link *********/
-
-	@Column(name = "batch_id", nullable = false)
-	private Long batchId;
 
 	public Boolean getShelves() {
 		return shelves;

@@ -1,5 +1,13 @@
 package com.yundao.cloudlib.bean;
 
+/**
+ * 
+ * @ClassName: Teacher
+ * @Description: 教师
+ * @author: jinzhaopo
+ * @version: V1.0
+ * @date: 2017年7月1日 上午10:05:23
+ */
 public class Teacher {
 	/**
 	 * id

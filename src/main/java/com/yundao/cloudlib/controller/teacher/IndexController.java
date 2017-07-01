@@ -11,46 +11,61 @@ import framework.util.RequestUtil;
  * 
  * @ClassName: IndexController
  * @Description: 教师平台的首页
- * @author: jinzhaopo
- * @version: V1.0
- * @date: 2017年6月28日 下午9:31:23
+ * @author: wf
+ * @date: 2017年6月30日 下午2:05:03
+ * @version 1.0
  */
 @Controller("teacherIndexController")
 @RequestMapping("/teacher")
-public class IndexController {
-
-	public static final String teacherSessionId = "teacherSessionId";
-
+public class IndexController extends BaseController {
 	/**
 	 * 
 	 * @Title: index
-	 * @Description: 教师模块的首页
+	 * @Description: 首页
 	 * @return
 	 * @return: String
 	 */
-	@RequestMapping(value = { "", "/", "/index" })
+	@RequestMapping("/index")
 	public String index() {
-		// 先默认设置一个老师的账户到session中
-		// 拦截器还没写
 		Teacher teacher = new Teacher();
 		teacher.setId(1L);
-		teacher.setName("测试");
-		teacher.setSchoolId(2L);
-		teacher.setSchoolName("测试学校");
-
-		RequestUtil.setSessionAttr(teacherSessionId, teacher);
-		return "/teacher/index";
+		teacher.setName("少时诵诗书");
+		teacher.setSchoolId(5L);
+		teacher.setSchoolName("温州第二高级中学");
+		RequestUtil.setSessionAttr(TEACHER_SESSION, teacher);
+		return "/teacher/common/index";
 	}
 
 	/**
 	 * 
-	 * @Title: middle
-	 * @Description:
+	 * @Title: logOut
+	 * @Description: 退出
 	 * @return
 	 * @return: String
 	 */
-	@RequestMapping(value = "/middle")
-	public String middle() {
-		return "/teacher/middle";
+	@RequestMapping("/logOut")
+	public String logOut() {
+		RequestUtil.removeAttribute(TEACHER_SESSION);
+		return "redirect:/search";
+	}
+
+	@RequestMapping("/top")
+	public String top() {
+		return "/teacher/common/top";
+	}
+
+	@RequestMapping("/print")
+	public String print() {
+		return "/teacher/common/print";
+	}
+
+	@RequestMapping("/left")
+	public String left() {
+		return "/teacher/common/left";
+	}
+
+	@RequestMapping("/swich")
+	public String swich() {
+		return "/teacher/common/swich";
 	}
 }
