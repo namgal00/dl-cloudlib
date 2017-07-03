@@ -9,7 +9,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.yundao.cloudlib.model.enumType.BookBatchType;
+import com.yundao.cloudlib.model.teacher.BookBatch;
 import com.yundao.cloudlib.service.TeacherOrderBatchService;
 
 import framework.page.Page;
@@ -56,9 +59,24 @@ public class BookOrderBatchController extends BaseController{
 	 * @return
 	 * @return: String
 	 */
-	@RequestMapping("/addBatch")
+	@RequestMapping(value="/addBatch",method=RequestMethod.GET)
 	public String addBatch(){
 		return "/teacher/orderBatch/addBatch";
+	}
+	
+	/**
+	 * 
+	 * @Title: addBatch
+	 * @Description: 新增批次页面处理页面
+	 * @param bookBatch
+	 * @return
+	 * @return: String
+	 */
+	@RequestMapping(value="/addBatch",method=RequestMethod.POST)
+	public String addBatch(BookBatch bookBatch){
+		bookBatch.setStatus(BookBatchType.reserve);
+		teacherOrderBatchService.save(bookBatch);
+		return null;
 	}
 	
 	/**
