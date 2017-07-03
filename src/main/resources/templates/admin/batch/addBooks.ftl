@@ -12,6 +12,19 @@
 				}
 				WD.rmDisabledBtn($obj);
 			}
+			
+			function clearNoNum(obj){
+				//先把非数字的都替换掉，除数字和.
+				obj.value=obj.value.replace(/[^\d.]/g,"");
+				//保证只有出现一个.而没有多个.
+				obj.value=obj.value.replace(/\.{2,}/g,".");
+				//必须保证第一个为数字而不是.
+				obj.value=obj.value.replace(/^\./g,"");
+				//保证.只出现一次，而不是出现两次以上
+				obj.value=obj.value.replace(".","$#$").replace(/\./g,"").replace("$#$",".");
+				//只能输入两位小数
+				obj.value=obj.value.replace(/^(\-)*(\d+)\.(\d\d).*$/,'$1$2.$3');
+			}
 		</script>
 	</head>
 
@@ -66,7 +79,7 @@
 						<tr>
 							<td>价格:</td>
 							<td>
-								<input type="text" name="sum" class="inp" size="10" value="0" onkeyup="if(event.keyCode !=37 && event.keyCode !=39){if(! /^[0-5]{0,1}[0-9]{1}$/ig.test(this.value)){this.value='';}}"/>
+								<input type="text" id="aaa" name="aaa" onkeyup="clearNoNum(this)" onblur="clearNoNum(this)"/>
 							</td>
 						</tr>
 						<tr>
