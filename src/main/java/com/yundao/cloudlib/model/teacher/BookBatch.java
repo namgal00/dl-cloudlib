@@ -5,6 +5,8 @@ import java.math.BigDecimal;
 import javax.persistence.Column;
 import javax.persistence.Table;
 
+import com.yundao.cloudlib.model.enumType.BookBatchType;
+
 import framework.model.BaseEntity;
 
 /**
@@ -30,10 +32,10 @@ public class BookBatch extends BaseEntity {
 	@Column(name = "name", nullable = true)
 	private String name;
 	/**
-	 * 默认金额
+	 * 默认预算
 	 */
-	@Column(name = "price", nullable = true)
-	private BigDecimal price;
+	@Column(name = "budget", nullable = true)
+	private BigDecimal budget;
 	/**
 	 * 联系人
 	 */
@@ -44,7 +46,20 @@ public class BookBatch extends BaseEntity {
 	 */
 	@Column(name = "contact_way", nullable = true)
 	private String contactWay;
+	/**
+	 * 批次状态
+	 */
+	@Column(name = "status", nullable = true)
+	private BookBatchType status;
 	
+	public BookBatchType getStatus() {
+		return status;
+	}
+
+	public void setStatus(BookBatchType status) {
+		this.status = status;
+	}
+
 	public String getContact() {
 		return contact;
 	}
@@ -77,12 +92,12 @@ public class BookBatch extends BaseEntity {
 		this.name = name;
 	}
 
-	public BigDecimal getPrice() {
-		return price;
+	public BigDecimal getBudget() {
+		return budget;
 	}
 
-	public void setPrice(BigDecimal price) {
-		this.price = price;
+	public void setBudget(BigDecimal budget) {
+		this.budget = budget;
 	}
 
 }

@@ -257,104 +257,31 @@ border:0px solid #F7F3F7;
 							<tr class="odd even">
 								<th width="3%">选择</th>
 								<th>批次名称</th>
-								<th>书商名称</th>
-								<th>预算名称</th>
-								<th width="10%">批次状态</th>
+								<th>预算</th>
+								<th>联系人</th>
+								<th width="10%">联系方式</th>
 								<th width="16%">创建日期</th>
+								<th width="8%">状态</th>
 								<th width="8%">详情</th>
 							</tr>
 						</thead>
 						<tbody>
-							
-								<input name="ids" type="hidden" value="325">
+								[#if (page.list)??] [#list page.list as data]
+								
+								<input name="ids" type="hidden" value="${data.id }">
 								<tr class="odd">
 									<td><input name="checks" type="checkbox" class="input_none" id="checks"></td>
-									<td>
-											
-											新建批次测试
-										</td>
-									<td>教育书店&nbsp;</td>
-									<td>2015qk &nbsp;</td>
-									<td>
-											预订
-										
-											
-										
-											
-										
-											
-										</td>
-									<td>&nbsp;2017-06-29</td>
+									<td>${data.name }</td>
+									<td>${data.budget }</td>
+									<td>${data.contact }</td>
+									<td>${data.contactWay }</td>
+									<td>${(data.createDate)?string('yyyy-MM-dd') }</td>
+									<td>${data.status.getName() }</td>
 									<td><a href="${base }/teacher/batch/orderBookList">查看</a></td>
 								</tr>
-							
-								<input name="ids" type="hidden" value="302">
-								<tr class="odd even">
-									<td><input name="checks" type="checkbox" class="input_none" id="checks"></td>
-									<td>
-											
-												<span style="color: red">20170407</span>
-											
-											
-										</td>
-									<td>清华大学出版社&nbsp;</td>
-									<td>2016516&nbsp;</td>
-									<td>
-											预订
-										
-											
-										
-											
-										
-											
-										</td>
-									<td>&nbsp;2017-04-07</td>
-									<td><a href="${base }/teacher/batch/orderBookList">查看</a></td>
-								</tr>
-							
-								<input name="ids" type="hidden" value="122">
-								<tr class="odd">
-									<td><input name="checks" type="checkbox" class="input_none" id="checks"></td>
-									<td>
-											
-											20160309
-										</td>
-									<td>2015书香工程&nbsp;</td>
-									<td>2015书香工程&nbsp;</td>
-									<td>
-											
-										
-											验收
-										
-											
-										
-											
-										</td>
-									<td>&nbsp;2016-03-09</td>
-									<td><a href="${base }/teacher/batch/orderBookList">查看</a></td>
-								</tr>
-							
-								<input name="ids" type="hidden" value="63">
-								<tr class="odd even">
-									<td><input name="checks" type="checkbox" class="input_none" id="checks"></td>
-									<td>
-											
-											2015书香工程
-										</td>
-									<td>2015书香工程&nbsp;</td>
-									<td>2015书香工程&nbsp;</td>
-									<td>
-											预订
-										
-											
-										
-											
-										
-											
-										</td>
-									<td>&nbsp;2015-11-16</td>
-									<td><a href="${base }/teacher/batch/orderBookList">查看</a></td>
-								</tr>
+								
+								[/#list][/#if]
+								
 							
 						</tbody>
 					</table>
