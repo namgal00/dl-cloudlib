@@ -1,8 +1,8 @@
 <div class="pager">
 	<span style="margin-left: 10px; float: left;margin-top: 5px; "><input class="input_none" type="checkbox" onclick="javascript:checkIds();"/> 
 	</span >
-	<span style="float: left;">全选/反选</span> <span>第1/1页
-		共5条</span>
+	<span style="float: left;">全选/反选</span> <span> 第${page.pageNum }/${page.pages }页 共${page.total}条 
+		</span>
 
 	[#if page.pageNum<=1 ] 
 		<span class="page_gray">首页</span>

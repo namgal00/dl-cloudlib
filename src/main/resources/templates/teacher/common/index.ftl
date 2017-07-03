@@ -3,9 +3,6 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<link rel="shortcut icon" href="./favicon.ico" />
-		<title>阿里云 云图书馆</title>
-		<script src="${base}/teacher/js/jquery-1.8.2.min.js" type="text/javascript"></script>
-		<script src="${base}/teacher/js/common_list.js" type="text/javascript"></script>
 
 	</head>
 

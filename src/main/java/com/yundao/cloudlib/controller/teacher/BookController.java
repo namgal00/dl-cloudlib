@@ -24,7 +24,7 @@ import framework.util.ServletUtil;
  * @version: V1.0
  * @date: 2017年7月3日 上午10:33:19
  */
-@Controller
+@Controller("teacherBookController")
 @RequestMapping("/teacher/book")
 public class BookController extends BaseController {
 
