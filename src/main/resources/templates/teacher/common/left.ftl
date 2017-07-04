@@ -46,7 +46,6 @@
 		</style>
 
 		<script src="${base }/teacher/js/jquery-1.8.2.min.js" type="text/javascript"></script>
-		<script src="${base }/teacher/js/common_list.js" type="text/javascript"></script>
 		<script type="text/javascript">
 			$(document).ready(function() {
 				$(".mTitle").click(function() {
@@ -109,7 +108,7 @@
 					</div>
 
 					<div class="mCon" style="display: block;">
-						<a href="${base }/teacher/bookOrder/bookList" class="mCon_a" target="main">电子书列表</a>
+						<a href="${base }/teacher/book/list" class="mCon_a" target="main">电子书列表</a>
 					</div>
 
 				</div>

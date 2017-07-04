@@ -2,19 +2,14 @@
 
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<title>阿里云云图书馆</title>
 
 		<!--框架必需start-->
 		<link href="${base }/teacher/css/css.css" rel="stylesheet" type="text/css" />
-
 		<!--框架必需end-->
 
 		<!-- 颜色 -->
 		<link href="${base }/teacher/css/frame.css" rel="stylesheet" type="text/css" />
 		<link href="${base }/teacher/css/jquery-ui-1.8.18.custom.css" rel="stylesheet" type="text/css" />
-		<script src="${base }/teacher/js/jquery-1.8.2.min.js"></script>
-		<script src="${base }/teacher/js/jquery.js" type="javascript"></script>
-		<script src="${base }/teacher/js/common_list.js" type="text/javascript"></script>
 
 		<script type="text/javascript">
 			$(function() {

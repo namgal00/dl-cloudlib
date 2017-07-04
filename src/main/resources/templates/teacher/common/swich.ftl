@@ -13,8 +13,6 @@
 		<!-- 颜色 -->
 		<link href="${base }/teacher/css/frame.css" rel="stylesheet" type="text/css">
 		<script src="${base }/teacher/js/jquery-1.8.2.min.js" type="text/javascript"></script>
-		<script src="${base }/teacher/js/common_list.js" type="text/javascript"></script>
-		<script src="${base }/teacher/js/common.js" type="text/javascript"></script>
 		<script src="${base }/teacher/js/WdatePicker.js" language="javascript"></script>
 		<link href="${base }/teacher/css/WdatePicker.css" rel="stylesheet" type="text/css">
 		<script type="text/javascript">

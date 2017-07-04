@@ -3,7 +3,7 @@
 	</span >
 	<span style="float: left;">全选/反选</span> <span> 第${page.pageNum }/${page.pages }页 共${page.total}条 
 		</span>
-
+<input type="hidden" name="pageNum" id="pageNum" value="${page.pageNum }" />
 	[#if page.pageNum<=1 ] 
 		<span class="page_gray">首页</span>
 		<span class="page_gray">上一页</span>
@@ -21,8 +21,8 @@
 		
 	[/#if]
 
-	<span>转至 <input id="forward" class="input_in" type="text" /> <input
-		type="button" class="input_btn" value="GO" id="goName" 
+	<span>转至 <input class="input_in" id="goName" type="text" /> <input
+		type="button" class="input_btn" value="GO" 
 		onclick="forwardPage(${page.pages})" />
 	</span>
 </div>
