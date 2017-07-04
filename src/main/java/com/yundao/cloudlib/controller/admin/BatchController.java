@@ -197,7 +197,7 @@ public class BatchController extends BaseController {
 	 * @return: String
 	 */
 	@RequestMapping(value = "/addBooks", method = RequestMethod.POST)
-	public String addBooks(@RequestParam("fileUpload") MultipartFile multipartFile, Long batchId, Boolean enable, Boolean shelves, Boolean enfree,BigDecimal price,
+	public String addBooks(@RequestParam("fileUpload") MultipartFile multipartFile, Long batchId, Boolean enable, Boolean shelves, Boolean enfree,
 			RedirectAttributes ra) {
 		try {
 			List<Book> books = (List<Book>) ExcelUtil.getInstance().readExcel2ObjsByPath(multipartFile.getInputStream(), Book.class);
@@ -206,7 +206,7 @@ public class BatchController extends BaseController {
 				book.setEnable(enable);
 				book.setFree(enfree);
 				book.setShelves(shelves);
-				book.setPrice(price);
+				//book.setPrice(price);
 			}
 			bookService.save(books);
 		} catch (IOException e) {
