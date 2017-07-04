@@ -521,7 +521,7 @@ function getRootPath() {
 function okOnBlur(domId) {
 	$("#" + domId).html(
 			"<img style='height:16px; width:20px' title=\"验证成功\"src=\""
-					+ getRootPath() + "/images/icons/ok.gif\">");
+					+ getRootPath() + "/image/icons/ok.gif\">");
 }
 
 /**

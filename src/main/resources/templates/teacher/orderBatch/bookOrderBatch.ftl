@@ -36,6 +36,8 @@
 								<a href="${base}/teacher/batch/addBatch">新增</a><span class="btn_right"></span></li>
 							<li><span class="btn_left"></span>
 								<a href="javascript:editDate('${base}/teacher/batch/edit');">修改</a><span class="btn_right"></span></li>
+							<li><span class="btn_left"></span>
+								<a href="javascript:editDate('${base}/teacher/batch/edit');">预定</a><span class="btn_right"></span></li>
 						</ul>
 					</div>
 					<div class="list" id="list1">

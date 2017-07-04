@@ -4,13 +4,17 @@ import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.yundao.cloudlib.I18nConstant;
+import com.yundao.cloudlib.bean.Teacher;
 import com.yundao.cloudlib.model.enumType.BookBatchType;
 import com.yundao.cloudlib.model.teacher.BookBatch;
 import com.yundao.cloudlib.service.TeacherOrderBatchService;
@@ -73,10 +77,13 @@ public class BookOrderBatchController extends BaseController{
 	 * @return: String
 	 */
 	@RequestMapping(value="/addBatch",method=RequestMethod.POST)
-	public String addBatch(BookBatch bookBatch){
-		bookBatch.setStatus(BookBatchType.reserve);
+	public String addBatch(BookBatch bookBatch,HttpSession session, RedirectAttributes ra){
+		Teacher t=(Teacher)session.getAttribute(TEACHER_SESSION);
+		bookBatch.setSchoolId(t.getSchoolId());
+		bookBatch.setStatus(BookBatchType.onunit);
 		teacherOrderBatchService.save(bookBatch);
-		return null;
+		addSuccessMessage(I18nConstant.success_add,ra);
+		return redirect("/teacher/batch/bookOrderBatch");
 	}
 	
 	/**

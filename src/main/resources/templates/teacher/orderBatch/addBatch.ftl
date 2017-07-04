@@ -57,7 +57,7 @@
 
 	<body>
 
-		<form action="${base}/bookOrderBatch/add" method="post" id="formId">
+		<form action="${base}/teacher/batch/addBatch" method="post" id="formId">
 			<div class="main">
 				[#include "/teacher/include/path.ftl"]
 				<div class="main_content">
