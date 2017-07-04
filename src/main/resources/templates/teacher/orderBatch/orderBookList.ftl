@@ -109,7 +109,7 @@
 							})
 							$(".text_box").keyup(function() {
 								var t = $(this).parent().find('input[class*=text_box]');
-								var reg = "/[1-9]|[1-9][\d]*/";
+								var reg = /[1-9]|[1-9][\d]*/;
 								if(!reg.test(t)) {
 									t.val(1);
 								}

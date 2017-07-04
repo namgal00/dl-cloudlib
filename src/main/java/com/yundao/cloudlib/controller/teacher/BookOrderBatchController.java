@@ -1,5 +1,6 @@
 package com.yundao.cloudlib.controller.teacher;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -88,6 +89,72 @@ public class BookOrderBatchController extends BaseController {
 		return redirect("/teacher/batch/bookOrderBatch");
 	}
 
+	/**
+	 * 
+	 * @Title: editBatch
+	 * @Description: 修改页面
+	 * @return
+	 * @return: String
+	 */
+	@RequestMapping(value="/editBatch",method=RequestMethod.GET)
+	public String editBatch(Long ids,Model model,RedirectAttributes ra){
+		BookBatch bookBatch=teacherOrderBatchService.get(ids);
+		if(bookBatch.getStatus().equals(BookBatchType.onunit)){
+			
+			model.addAttribute("bookBatch",bookBatch);
+			return "/teacher/orderBatch/editBatch";
+		}
+		addErrorMessage(I18nConstant.message_error,ra);
+		return redirect("/teacher/batch/bookOrderBatch");
+	}
+	
+	/**
+	 * 
+	 * @Title: editBatch
+	 * @Description: 修改批次处理
+	 * @return
+	 * @return: String
+	 */
+	@RequestMapping(value="/editBatch",method=RequestMethod.POST)
+	public String editBatch(BookBatch bookBatch, RedirectAttributes ra){
+		bookBatch.setModifyDate(new Date());
+		teacherOrderBatchService.updateSelective(bookBatch);
+		addSuccessMessage(I18nConstant.success_edit,ra);
+		return redirect("/teacher/batch/bookOrderBatch");
+	}
+	
+	/**
+	 * 
+	 * @Title: reserveBatch
+	 * @Description: 修改批次状态，预定
+	 * @param ids
+	 * @param ra
+	 * @return
+	 * @return: String
+	 */
+	@RequestMapping("/reserveBatch")
+	public String reserveBatch(Long ids, RedirectAttributes ra){
+		List<BookBatch> list=teacherOrderBatchService.getAll();
+		boolean flag=true;
+		for(BookBatch b:list){
+			if(b.getStatus().equals(BookBatchType.reserve)){
+				flag=false;
+				break;
+			}
+		}
+		BookBatch bookBatch=teacherOrderBatchService.get(ids);
+		if(flag){
+			bookBatch.setStatus(BookBatchType.reserve);
+			bookBatch.setModifyDate(new Date());
+			teacherOrderBatchService.updateSelective(bookBatch);
+			addSuccessMessage(I18nConstant.success_edit,ra);
+		}else{
+			addErrorMessage(I18nConstant.message_error,ra);
+		}
+		
+		return redirect("/teacher/batch/bookOrderBatch");
+	}
+	
 	/**
 	 * 
 	 * @Title: orderBookList

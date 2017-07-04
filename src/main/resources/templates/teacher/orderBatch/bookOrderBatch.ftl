@@ -14,6 +14,14 @@
 			function editDate(url) {
 				editDataByCheckId(url);
 			}
+			 
+			/*
+			 * 修改批次状态
+			 */
+			 function reserveDate(url){
+				 editDataByCheckId(url);
+			}
+			 
 		</script>
 	</head>
 
@@ -35,9 +43,9 @@
 							<li><span class="btn_left"></span>
 								<a href="${base}/teacher/batch/addBatch">新增</a><span class="btn_right"></span></li>
 							<li><span class="btn_left"></span>
-								<a href="javascript:editDate('${base}/teacher/batch/edit');">修改</a><span class="btn_right"></span></li>
+								<a href="javascript:editDate('${base}/teacher/batch/editBatch');">修改</a><span class="btn_right"></span></li>
 							<li><span class="btn_left"></span>
-								<a href="javascript:editDate('${base}/teacher/batch/edit');">预定</a><span class="btn_right"></span></li>
+								<a href="javascript:reserveDate('${base}/teacher/batch/reserveBatch');">预定</a><span class="btn_right"></span></li>
 						</ul>
 					</div>
 					<div class="list" id="list1">
@@ -58,7 +66,7 @@
 								[#if (page.list)??] [#list page.list as data]
 
 								<tr class="odd">
-									<td><input type="checkbox" name="ids" value="${data.id }"  class="input_none" /></td>
+									<td><input type="checkbox" name="ids" value="${data.id }"  class="input_none" form="form_ids"/></td>
 									<td>${data.name }</td>
 									<td>${data.budget }</td>
 									<td>${data.contact }</td>

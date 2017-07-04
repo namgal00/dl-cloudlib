@@ -5,6 +5,7 @@ import java.math.BigDecimal;
 import javax.persistence.Column;
 import javax.persistence.Table;
 
+import com.mysql.fabric.xmlrpc.base.Data;
 import com.yundao.cloudlib.model.enumType.BookBatchType;
 
 import framework.model.BaseEntity;
@@ -114,5 +115,7 @@ public class BookBatch extends BaseEntity {
 	public void setBudget(BigDecimal budget) {
 		this.budget = budget;
 	}
+
+	
 
 }
