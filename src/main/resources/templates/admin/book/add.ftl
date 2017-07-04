@@ -153,7 +153,7 @@
 						<tr>
 							<td>价格:</td>
 							<td>
-								<input type="text" id="aaa" name="aaa" onkeyup="clearNoNum(this)" onblur="clearNoNum(this)"/>
+								<input type="text" id="aaa" name="price" onkeyup="clearNoNum(this)" onblur="clearNoNum(this)"/>
 							</td>
 						</tr>
 						

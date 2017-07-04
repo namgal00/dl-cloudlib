@@ -4,12 +4,19 @@ import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.yundao.cloudlib.I18nConstant;
+import com.yundao.cloudlib.bean.Teacher;
+import com.yundao.cloudlib.model.enumType.BookBatchType;
+import com.yundao.cloudlib.model.teacher.BookBatch;
 import com.yundao.cloudlib.service.TeacherOrderBatchService;
 
 import framework.page.Page;
@@ -41,6 +48,7 @@ public class BookOrderBatchController extends BaseController{
 	public String bookOrderBatch(Page page, Model model, HttpServletRequest request){
 		Map<String, Object> searchMap = ServletUtil.getParametersStartingWith(request);
 		List<SearchFilter> filters = ServletUtil.parse(searchMap);
+		filters.add(SearchFilter.eq("schoolId", getTeacher().getSchoolId()));
 		page.setSearchFilters(filters);
 
 		page = teacherOrderBatchService.find(page);
@@ -56,9 +64,27 @@ public class BookOrderBatchController extends BaseController{
 	 * @return
 	 * @return: String
 	 */
-	@RequestMapping("/addBatch")
+	@RequestMapping(value="/addBatch",method=RequestMethod.GET)
 	public String addBatch(){
 		return "/teacher/orderBatch/addBatch";
+	}
+	
+	/**
+	 * 
+	 * @Title: addBatch
+	 * @Description: 新增批次页面处理页面
+	 * @param bookBatch
+	 * @return
+	 * @return: String
+	 */
+	@RequestMapping(value="/addBatch",method=RequestMethod.POST)
+	public String addBatch(BookBatch bookBatch,HttpSession session, RedirectAttributes ra){
+		Teacher t=(Teacher)session.getAttribute(TEACHER_SESSION);
+		bookBatch.setSchoolId(t.getSchoolId());
+		bookBatch.setStatus(BookBatchType.onunit);
+		teacherOrderBatchService.save(bookBatch);
+		addSuccessMessage(I18nConstant.success_add,ra);
+		return redirect("/teacher/batch/bookOrderBatch");
 	}
 	
 	/**

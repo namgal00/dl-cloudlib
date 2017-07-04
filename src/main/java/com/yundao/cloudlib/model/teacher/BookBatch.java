@@ -51,7 +51,22 @@ public class BookBatch extends BaseEntity {
 	 */
 	@Column(name = "status", nullable = true)
 	private BookBatchType status;
+	/**
+	 * 备注
+	 */
+	@Column(name = "message")
+	private String message;
 	
+	
+	
+	public String getMessage() {
+		return message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
 	public BookBatchType getStatus() {
 		return status;
 	}

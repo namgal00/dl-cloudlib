@@ -57,7 +57,7 @@
 
 	<body>
 
-		<form action="${base}/bookOrderBatch/add" method="post" id="formId">
+		<form action="${base}/teacher/batch/addBatch" method="post" id="formId">
 			<div class="main">
 				[#include "/teacher/include/path.ftl"]
 				<div class="main_content">
@@ -72,22 +72,22 @@
 
 									<tr>
 										<th align="right" width="150">预算金额：</th>
-										<td align="left"><input name="name" type="text" value="" id="name" onblur="textOnBlur()"><span style="color: red" id="nameInfo">*</span></td>
+										<td align="left"><input name="budget" type="text" value="" id="name" onblur="textOnBlur()"><span style="color: red" id="nameInfo">*</span></td>
 									</tr>
 
 									<tr>
 										<th align="right" width="150">联系人：</th>
-										<td align="left"><input name="name" type="text" value="" id="name" onblur="textOnBlur()"><span style="color: red" id="nameInfo">*</span></td>
+										<td align="left"><input name="contact" type="text" value="" id="name" onblur="textOnBlur()"><span style="color: red" id="nameInfo">*</span></td>
 									</tr>
 
 									<tr>
 										<th align="right" width="150">联系方式：</th>
-										<td align="left"><input name="name" type="text" value="" id="name" onblur="textOnBlur()"><span style="color: red" id="nameInfo">*</span></td>
+										<td align="left"><input name="contactWay" type="text" value="" id="name" onblur="textOnBlur()"><span style="color: red" id="nameInfo">*</span></td>
 									</tr>
 
 									<tr>
 										<th align="right">备注：</th>
-										<td colspan="3" align="left"><textarea name="remark" id="textarea" cols="50" rows="3"></textarea></td>
+										<td colspan="3" align="left"><textarea name="message" id="textarea" cols="50" rows="3"></textarea></td>
 									</tr>
 
 									<tr>
