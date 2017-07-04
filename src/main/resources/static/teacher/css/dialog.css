@@ -44,6 +44,7 @@ p.close {
 	width: 40px;
 	line-height: 24px;
 	background-image: -moz-linear-gradient(center top, #feca00, #fc6100);
+	background-color: #F4AB4C;
 	text-align: center;
 	margin-top: 18px;
 	margin-left: 180px;

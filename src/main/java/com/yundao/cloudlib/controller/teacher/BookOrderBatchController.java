@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.yundao.cloudlib.I18nConstant;
@@ -33,10 +34,10 @@ import framework.util.ServletUtil;
  */
 @Controller
 @RequestMapping("/teacher/batch")
-public class BookOrderBatchController extends BaseController{
+public class BookOrderBatchController extends BaseController {
 	@Autowired
 	private TeacherOrderBatchService teacherOrderBatchService;
-	
+
 	/**
 	 * 
 	 * @Title: bookOrderBatch
@@ -45,7 +46,7 @@ public class BookOrderBatchController extends BaseController{
 	 * @return: String
 	 */
 	@RequestMapping("/bookOrderBatch")
-	public String bookOrderBatch(Page page, Model model, HttpServletRequest request){
+	public String bookOrderBatch(Page page, Model model, HttpServletRequest request) {
 		Map<String, Object> searchMap = ServletUtil.getParametersStartingWith(request);
 		List<SearchFilter> filters = ServletUtil.parse(searchMap);
 		filters.add(SearchFilter.eq("schoolId", getTeacher().getSchoolId()));
@@ -56,7 +57,7 @@ public class BookOrderBatchController extends BaseController{
 		model.addAllAttributes(searchMap);
 		return "/teacher/orderBatch/bookOrderBatch";
 	}
-	
+
 	/**
 	 * 
 	 * @Title: addBatch
@@ -64,11 +65,11 @@ public class BookOrderBatchController extends BaseController{
 	 * @return
 	 * @return: String
 	 */
-	@RequestMapping(value="/addBatch",method=RequestMethod.GET)
-	public String addBatch(){
+	@RequestMapping(value = "/addBatch", method = RequestMethod.GET)
+	public String addBatch() {
 		return "/teacher/orderBatch/addBatch";
 	}
-	
+
 	/**
 	 * 
 	 * @Title: addBatch
@@ -77,16 +78,16 @@ public class BookOrderBatchController extends BaseController{
 	 * @return
 	 * @return: String
 	 */
-	@RequestMapping(value="/addBatch",method=RequestMethod.POST)
-	public String addBatch(BookBatch bookBatch,HttpSession session, RedirectAttributes ra){
-		Teacher t=(Teacher)session.getAttribute(TEACHER_SESSION);
+	@RequestMapping(value = "/addBatch", method = RequestMethod.POST)
+	public String addBatch(BookBatch bookBatch, HttpSession session, RedirectAttributes ra) {
+		Teacher t = (Teacher) session.getAttribute(TEACHER_SESSION);
 		bookBatch.setSchoolId(t.getSchoolId());
 		bookBatch.setStatus(BookBatchType.onunit);
 		teacherOrderBatchService.save(bookBatch);
-		addSuccessMessage(I18nConstant.success_add,ra);
+		addSuccessMessage(I18nConstant.success_add, ra);
 		return redirect("/teacher/batch/bookOrderBatch");
 	}
-	
+
 	/**
 	 * 
 	 * @Title: orderBookList
@@ -95,8 +96,21 @@ public class BookOrderBatchController extends BaseController{
 	 * @return: String
 	 */
 	@RequestMapping("/orderBookList")
-	public String orderBookList(){
+	public String orderBookList() {
 		return "/teacher/orderBatch/orderBookList";
+	}
+
+	/**
+	 * 
+	 * @Title: getOrderBookBatch
+	 * @Description: 获取预定状态的批次
+	 * @return
+	 * @return: BookBatch
+	 */
+	@RequestMapping("/getOrderBookBatch")
+	@ResponseBody
+	public BookBatch getOrderBookBatch() {
+		return teacherOrderBatchService.getOrderBatch(getTeacher().getSchoolId(), BookBatchType.reserve);
 	}
 
 }

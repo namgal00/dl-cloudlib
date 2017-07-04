@@ -6,7 +6,7 @@
 		<script type="text/javascript">
 			$(function() {
 				showPath("当前位置：电子书管理→ 电子书→ 电子书列表");
-				showBg();
+				
 			});
 			/**
 			 * 修改
@@ -14,6 +14,42 @@
 			 */
 			function editDate(url) {
 				editDataByCheckId(url);
+			}
+			/**
+			 * 订购点击事件
+			 * @param {Object} url
+			 */
+			function addOrder(url) {
+				var judge = true;
+				//先验证是否有预定批次
+				$.ajax({
+					type: "post",
+					url: base + '/teacher/batch/getOrderBookBatch',
+					success: function(data) {
+						if(data != null) {
+							judge = false;
+						}
+					},
+					error: function() {
+						judge = false;
+						showMessageWarn("系统错误!");
+					}
+
+				});
+
+				if(!judge) {
+					showMessageWarn("请先选择批次!");
+					return;
+				}
+				//判断有没有选择电子书
+				var ids = getCheckIds();
+				var length = ids.length;
+				if(length < 1) {
+					showMessageWarn("请选择记录!");
+					return;
+				}
+				//显示填写的内容
+				showBg();
 			}
 		</script>
 	</head>
@@ -38,7 +74,7 @@
 						<span style="color:red;">当前预定批次:${(bookBatch.name)!''}<span>
 						<ul>
 							<li><span class="btn_left"></span>
-								<a href="${base}/teacher/batch/addBatch">新增</a><span class="btn_right"></span></li>
+						<a href="javascript:addOrder('${base}/teacher/batchOrder/addOrder')">订购</a><span class="btn_right"></span></li>
 						</ul>
 					</div>
 					<div class="list" id="list1">
@@ -105,7 +141,19 @@
 				</div>
 			</div>
 		</form>
-		<form action="" id="form_ids" hidden="hidden" method="post"></form>
+		<form action="" id="form_ids" hidden="hidden" method="post">
+
+		</form>
 	</body>
-</div>
+	</div>
+	<div id="fullbg"></div>
+	<div id="dialog">
+		<p id="message_prompt_title" class="title">请填写数量和期限</p>
+		<div class="content">
+			<span>副本数:</span><input type="text"><br/>
+			<span>期限(月):</span><input type="text">
+		</div>
+		<p class="close" style="margin-top: 50px;background-color: #F4AB4C;" onclick="closeBg();">确定</p>
+	</div>
+
 </html>
