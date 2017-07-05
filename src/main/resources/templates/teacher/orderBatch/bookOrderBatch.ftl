@@ -59,7 +59,6 @@
 									<th width="10%">联系方式</th>
 									<th width="16%">创建日期</th>
 									<th width="8%">状态</th>
-									<th width="8%">详情</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -73,9 +72,6 @@
 									<td>${data.contactWay }</td>
 									<td>${(data.createDate)?string('yyyy-MM-dd') }</td>
 									<td>${data.status.getName() }</td>
-									<td>
-										<a href="${base }/teacher/batch/orderBookList">查看</a>
-									</td>
 								</tr>
 
 								[/#list][/#if]

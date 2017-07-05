@@ -12,10 +12,6 @@
 		<link href="${base }/teacher/css/jquery-ui-1.8.18.custom.css" rel="stylesheet" type="text/css" />
 
 		<script type="text/javascript">
-			$(function() {
-
-			});
-
 			/**
 			 * 退出
 			 */
