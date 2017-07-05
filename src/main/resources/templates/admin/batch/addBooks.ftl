@@ -13,18 +13,7 @@
 				WD.rmDisabledBtn($obj);
 			}
 			
-			function clearNoNum(obj){
-				//先把非数字的都替换掉，除数字和.
-				obj.value=obj.value.replace(/[^\d.]/g,"");
-				//保证只有出现一个.而没有多个.
-				obj.value=obj.value.replace(/\.{2,}/g,".");
-				//必须保证第一个为数字而不是.
-				obj.value=obj.value.replace(/^\./g,"");
-				//保证.只出现一次，而不是出现两次以上
-				obj.value=obj.value.replace(".","$#$").replace(/\./g,"").replace("$#$",".");
-				//只能输入两位小数
-				obj.value=obj.value.replace(/^(\-)*(\d+)\.(\d\d).*$/,'$1$2.$3');
-			}
+			
 		</script>
 	</head>
 
@@ -76,12 +65,7 @@
 								<input type="radio" class="radioClass" name="enfree" value="false" checked="checked" /> 否<br />
 							</td>
 						</tr>
-						<tr>
-							<td>价格:</td>
-							<td>
-								<input type="text" id="aaa" name="price" onkeyup="clearNoNum(this)" onblur="clearNoNum(this)"/>
-							</td>
-						</tr>
+						
 						<tr>
 							<td></td>
 							<td>

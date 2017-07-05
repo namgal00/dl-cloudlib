@@ -91,7 +91,7 @@ public class Book extends BaseEntity {
 
 	@Column(name = "batch_id", nullable = false)
 	private Long batchId;
-
+	//title="价格"<=excel里边的名字
 	@ExcelResources(order = 8, title = "价格")
 	public BigDecimal getPrice() {
 		return price;
