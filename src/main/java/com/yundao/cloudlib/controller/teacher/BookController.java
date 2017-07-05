@@ -49,6 +49,10 @@ public class BookController extends BaseController {
 	public String list(Page page, Model model, HttpServletRequest request) {
 		Map<String, Object> searchMap = ServletUtil.getParametersStartingWith(request);
 		List<SearchFilter> filters = ServletUtil.parse(searchMap);
+		//这里需要的是启用的  上架的  不是免费的
+		filters.add(SearchFilter.eq("enable", true));
+		filters.add(SearchFilter.eq("shelves", true));
+		filters.add(SearchFilter.eq("free", false));
 		page.setSearchFilters(filters);
 
 		page = bookService.find(page);

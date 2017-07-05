@@ -87,6 +87,7 @@
 					<!--按照百分比写th不同的宽度需自定义。某些可直接定义宽度的无需写百分比。在所有的th当中挑选一格不写宽度，以自适应。-->
 					<tr>
 						<th width="60">选择</th>
+						<th>入库时间</th>
 						<th>ISBN</th>
 						<th>题名</th>
 						<th>作者</th>
@@ -105,7 +106,10 @@
 
 						<td><input type="checkbox" name="ids" value="${data.id }" form="form_ids" /></td>
 						<td>
-							<div title="${data.isbn }">${data.isbn }${data.enfree}</div>
+							<div title="${data.createDate?string('yyyy-MM-dd') }">${data.createDate?string('yyyy-MM-dd') }</div>
+						</td>
+						<td>
+							<div title="${data.isbn }">${data.isbn }</div>
 						</td>
 						<td>
 							<div title="${data.title }">${data.title }</div>

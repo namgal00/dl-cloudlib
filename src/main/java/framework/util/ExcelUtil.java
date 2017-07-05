@@ -215,7 +215,8 @@ public class ExcelUtil {
 				Object obj = clz.newInstance();
 				for (Cell c : row) {
 					try {
-						if (StringUtils.isBlank(c.getStringCellValue())) {
+						// excel如果是数字的话c.getStringCellValue()会报错
+						if (StringUtils.isBlank(this.getCellValue(c))) {
 							break;
 						}
 						int ci = c.getColumnIndex();
@@ -223,12 +224,11 @@ public class ExcelUtil {
 						mn = mn.substring(0, 1).toLowerCase() + mn.substring(1);
 						BeanUtils.copyProperty(obj, mn, this.getCellValue(c));
 					} catch (Exception e) {
-						
-					      System.out.println("获得一个错误：" + e.getMessage());
-				            e.printStackTrace();
-				           
-						throw new RuntimeException("excel导入出错，行数: " + row.getRowNum() + ", 列数:" + c.getColumnIndex()
-								+ ", 值: " + this.getCellValue(c));
+
+						System.out.println("获得一个错误：" + e.getMessage());
+						e.printStackTrace();
+
+						throw new RuntimeException("excel导入出错，行数: " + row.getRowNum() + ", 列数:" + c.getColumnIndex() + ", 值: " + this.getCellValue(c));
 					}
 				}
 				objs.add(obj);
@@ -359,9 +359,7 @@ public class ExcelUtil {
 							Cell cell = row.createCell(x);
 							ExcelHeader header = headers.get(x);
 							String value = BeanUtils.getProperty(obj, getMethodName(header));
-							if (BigDecimal.class.isAssignableFrom(header.getReturnType())
-									|| Double.class.isAssignableFrom(header.getReturnType())
-									|| Float.class.isAssignableFrom(header.getReturnType())) {
+							if (BigDecimal.class.isAssignableFrom(header.getReturnType()) || Double.class.isAssignableFrom(header.getReturnType()) || Float.class.isAssignableFrom(header.getReturnType())) {
 								cell.setCellType(HSSFCell.CELL_TYPE_NUMERIC);
 								if (!StringUtils.isEmpty(value)) {
 									cell.setCellValue(new Double(value));
@@ -473,9 +471,7 @@ public class ExcelUtil {
 							continue;
 						}
 						String value = BeanUtils.getProperty(obj, getMethodName(header));
-						if (BigDecimal.class.isAssignableFrom(header.getReturnType())
-								|| Double.class.isAssignableFrom(header.getReturnType())
-								|| Float.class.isAssignableFrom(header.getReturnType())) {
+						if (BigDecimal.class.isAssignableFrom(header.getReturnType()) || Double.class.isAssignableFrom(header.getReturnType()) || Float.class.isAssignableFrom(header.getReturnType())) {
 							cell.setCellType(HSSFCell.CELL_TYPE_NUMERIC);
 							if (!StringUtils.isEmpty(value)) {
 								cell.setCellValue(new Double(value));
@@ -638,8 +634,7 @@ public class ExcelUtil {
 		response.reset();
 		response.setContentType("application/vnd.ms-excel;charset=utf-8");
 		try {
-			response.setHeader("Content-Disposition",
-					"attachment;filename=" + new String((fileName + ".xls").getBytes(), "iso-8859-1"));
+			response.setHeader("Content-Disposition", "attachment;filename=" + new String((fileName + ".xls").getBytes(), "iso-8859-1"));
 		} catch (UnsupportedEncodingException e) {
 			e.printStackTrace();
 		}

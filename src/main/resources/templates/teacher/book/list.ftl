@@ -6,11 +6,11 @@
 		<script type="text/javascript">
 			$(function() {
 				showPath("当前位置：电子书管理→ 电子书→ 电子书列表");
-				
 			});
 			/**
 			 * 修改
 			 * @param {Object} url
+			 *
 			 */
 			function editDate(url) {
 				editDataByCheckId(url);
@@ -25,8 +25,9 @@
 				$.ajax({
 					type: "post",
 					url: base + '/teacher/batch/getOrderBookBatch',
+					async: false,
 					success: function(data) {
-						if(data != null) {
+						if(data == null) {
 							judge = false;
 						}
 					},
@@ -36,7 +37,7 @@
 					}
 
 				});
-
+				
 				if(!judge) {
 					showMessageWarn("请先选择批次!");
 					return;
@@ -48,8 +49,18 @@
 					showMessageWarn("请选择记录!");
 					return;
 				}
+				//先自动赋值
+				$("#bookReplication").val(1);
+				$("#mon").val(12);
 				//显示填写的内容
 				showBg();
+			}
+			/**
+			 * 订购
+			 */
+			function submitIds() {
+				$("#form_ids").attr("action",base+"/teacher/order/add");
+				$("#form_ids").submit();
 			}
 		</script>
 	</head>
@@ -82,15 +93,13 @@
 							<thead>
 								<tr class="odd even">
 									<th width="60">选择</th>
+									<th>入库时间</th>
 									<th>ISBN</th>
 									<th>题名</th>
 									<th>作者</th>
 									<th>出版社</th>
 									<th>出版时间</th>
 									<th>分类号</th>
-									<th>启用</th>
-									<th>上架</th>
-									<th>免费</th>
 									<th>价格</th>
 								</tr>
 							</thead>
@@ -100,7 +109,10 @@
 								<tr class="odd">
 									<td><input type="checkbox" name="ids" value="${data.id }" form="form_ids" class="input_none" /></td>
 									<td>
-										<div title="${data.isbn }">${data.isbn }${data.enfree}</div>
+										<div title="${data.createDate?string('yyyy-MM-dd') }">${data.createDate?string('yyyy-MM-dd') }</div>
+									</td>
+									<td>
+										<div title="${data.isbn }">${data.isbn }</div>
 									</td>
 									<td>
 										<div title="${data.title }">${data.title }</div>
@@ -116,15 +128,6 @@
 									</td>
 									<td>
 										<div title="${data.classification }">${data.classification }</div>
-									</td>
-									<td>
-										<div title="${data.enable?string(" 是 ","否 ")  }">${data.enable?string("是","否") }</div>
-									</td>
-									<td>
-										<div title="${data.shelves?string(" 是 ","否 ")  }">${data.shelves?string("是","否") }</div>
-									</td>
-									<td>
-										<div title="${data.free?string(" 是 ","否 ") }">${data.free?string("是","否") }</div>
 									</td>
 									<td>
 										<div title="${data.price }">${data.price }</div>
@@ -148,12 +151,12 @@
 	</div>
 	<div id="fullbg"></div>
 	<div id="dialog">
-		<p id="message_prompt_title" class="title">请填写数量和期限</p>
+		<p id="" class="title">请填写数量和期限</p>
 		<div class="content">
-			<span>副本数:</span><input type="text"><br/>
-			<span>期限(月):</span><input type="text">
+			<span>副本数:</span><input type="number" name="bookReplication" id="bookReplication" form="form_ids"  required="required"><br/>
+			<span>期限(月):</span><input type="number" name="mon" id="mon" form="form_ids" required="required">
 		</div>
-		<p class="close" style="margin-top: 50px;background-color: #F4AB4C;" onclick="closeBg();">确定</p>
+		<p class="close" style="margin-top: 50px;background-color: #F4AB4C;" onclick="submitIds();">确定</p>
 	</div>
 
 </html>

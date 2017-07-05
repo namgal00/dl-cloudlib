@@ -15,9 +15,9 @@ import framework.model.BaseEntity;
  * @Description: 学校申请购买书 首先拿到这个需求要先分析 云图那边要提交申请，做为学校要看到什么信息才可以进行下一步操作呢？？
  *               假设是对单本书的申请有没有什么意义？是不是按照批次来？还是批次和单本都是需要的
  * 
- *               方案一：按照批次来进行申请 
- *               1.所以第一步是云图那边需要有批次查询，对批次中的书进行申请购买的操作
- *               需要展示的字段：批次的id，批次的名称，批次的介绍（给学校看批次里面有些什么书），其它必须的字段就不介绍了；这个需要调用dl-cloudlib的接口
+ *               方案一：按照批次来进行申请 1.所以第一步是云图那边需要有批次查询，对批次中的书进行申请购买的操作
+ *               需要展示的字段：批次的id，批次的名称，批次的介绍（给学校看批次里面有些什么书），其它必须的字段就不介绍了；这个需要调用dl-
+ *               cloudlib的接口
  * 
  *               2.在批次的基础上进行操作，需要填写什么字段？
  *               字段：期限（表示这些书购买到什么时候截至），副本数（表示），其它字段就不说了，这个申请的需要调用dl-cloudlib的接口
@@ -39,19 +39,24 @@ public class BookApply extends BaseEntity {
 	 */
 	@Column(name = "school_id", nullable = false, unique = true)
 	private Long schoolId;
-	
+
 	/*
 	 * 订单批次Id
 	 */
 	@Column(name = "book_batch_id", nullable = false, unique = true)
 	private Long bookBatchId;
+	/**
+	 * 批次名称
+	 */
+	@Column(name = "book_batch_name", nullable = false, unique = false)
+	private String bookBatchName;
 
 	/*
 	 * 书Id
 	 */
 	@Column(name = "book_id", nullable = false, unique = true)
 	private Long bookId;
-	
+
 	/*
 	 * isbn
 	 */
@@ -87,19 +92,18 @@ public class BookApply extends BaseEntity {
 	 */
 	@Column(nullable = false)
 	private String path;
-	
+
 	/*
 	 * 单价
 	 */
 	@Column(nullable = false)
 	private BigDecimal price;
-	
+
 	/*
 	 * 副本数
 	 */
-	@Column(name="book_replication",nullable = false)
+	@Column(name = "book_replication", nullable = false)
 	private Long bookReplication;
-	
 
 	/*
 	 * 申请状态：NOTSUBMIT("未提交"),DEALING("待处理"),PASS("申请通过"),NOPASS("申请不通过")
