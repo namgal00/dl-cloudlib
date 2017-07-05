@@ -373,7 +373,7 @@ iframe {
 	font-weight: normal;
 	color: #003c62;
 	padding: 6px 0 0 20px;
-	background: url(../images/leftNavbg.jpg) repeat-x;
+/*	background: url(../images/leftNavbg.jpg) repeat-x;*/
 	height: 23px;
 	cursor: pointer;
 }
@@ -427,7 +427,7 @@ iframe {
 	min-width: 750px;
 	height: 28px;
 	overflow: hidden;
-	background: url(../images/Mtop_bg.gif) repeat-x;
+/*	background: url(../images/Mtop_bg.gif) repeat-x;*/
 	text-indent: 20px;
 	color: #FFF;
 	line-height: 25px;

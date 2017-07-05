@@ -11,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.yundao.cloudlib.model.enumType.BookBatchType;
+import com.yundao.cloudlib.model.enumType.IsWorkBatchType;
 import com.yundao.cloudlib.model.teacher.BookBatch;
 import com.yundao.cloudlib.service.BookService;
 import com.yundao.cloudlib.service.TeacherOrderBatchService;
@@ -59,7 +60,7 @@ public class BookController extends BaseController {
 		model.addAttribute(PAGE, page);
 		model.addAllAttributes(searchMap);
 		
-		model.addAttribute("bookBatch", teacherOrderBatchService.getOrderBatch(getTeacher().getSchoolId(), BookBatchType.reserve));
+		model.addAttribute("bookBatch", teacherOrderBatchService.getOrderBatch(getTeacher().getSchoolId(),IsWorkBatchType.yes));
 		return "/teacher/book/list";
 	}
 }

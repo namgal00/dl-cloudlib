@@ -16,9 +16,9 @@
 			}
 			 
 			/*
-			 * 修改批次状态
+			 * 修改为当前工作批次状态
 			 */
-			 function reserveDate(url){
+			 function isWorkBatchDate(url){
 				 editDataByCheckId(url);
 			}
 			 
@@ -45,7 +45,7 @@
 							<li><span class="btn_left"></span>
 								<a href="javascript:editDate('${base}/teacher/batch/editBatch');">修改</a><span class="btn_right"></span></li>
 							<li><span class="btn_left"></span>
-								<a href="javascript:reserveDate('${base}/teacher/batch/reserveBatch');">预定</a><span class="btn_right"></span></li>
+								<a href="javascript:isWorkBatchDate('${base}/teacher/batch/isWorkBatch');">设为当前批次</a><span class="btn_right"></span></li>
 						</ul>
 					</div>
 					<div class="list" id="list1">
@@ -66,7 +66,12 @@
 
 								<tr class="odd">
 									<td><input type="checkbox" name="ids" value="${data.id }"  class="input_none" form="form_ids"/></td>
-									<td>${data.name }</td>
+									<td >[#if (data.isWorkBatch.getName()=="2")] 
+									          	<span style="color: red;">${data.name}</span> 
+									     [#else]
+									          ${data.name }
+									     [/#if]
+									</td>
 									<td>${data.budget }</td>
 									<td>${data.contact }</td>
 									<td>${data.contactWay }</td>

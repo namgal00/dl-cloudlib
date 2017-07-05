@@ -7,6 +7,7 @@ import javax.persistence.Table;
 
 import com.mysql.fabric.xmlrpc.base.Data;
 import com.yundao.cloudlib.model.enumType.BookBatchType;
+import com.yundao.cloudlib.model.enumType.IsWorkBatchType;
 
 import framework.model.BaseEntity;
 
@@ -57,9 +58,21 @@ public class BookBatch extends BaseEntity {
 	 */
 	@Column(name = "message")
 	private String message;
+	/**
+	 * 是否为工作批次：1不是，2是
+	 */
+	@Column(name = "is_work_batch")
+	private IsWorkBatchType isWorkBatch;
 	
 	
-	
+	public IsWorkBatchType getIsWorkBatch() {
+		return isWorkBatch;
+	}
+
+	public void setIsWorkBatch(IsWorkBatchType isWorkBatch) {
+		this.isWorkBatch = isWorkBatch;
+	}
+
 	public String getMessage() {
 		return message;
 	}
