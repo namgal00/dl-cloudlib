@@ -223,6 +223,10 @@ public class ExcelUtil {
 						mn = mn.substring(0, 1).toLowerCase() + mn.substring(1);
 						BeanUtils.copyProperty(obj, mn, this.getCellValue(c));
 					} catch (Exception e) {
+						
+					      System.out.println("获得一个错误：" + e.getMessage());
+				            e.printStackTrace();
+				           
 						throw new RuntimeException("excel导入出错，行数: " + row.getRowNum() + ", 列数:" + c.getColumnIndex()
 								+ ", 值: " + this.getCellValue(c));
 					}
