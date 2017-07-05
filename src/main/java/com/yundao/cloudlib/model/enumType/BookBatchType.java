@@ -8,7 +8,7 @@ package com.yundao.cloudlib.model.enumType;
  * @version 1.0
  */
 public enum BookBatchType {
-	onunit("待操作"),reserve("预定"),review("审核"),complete("完成");
+	reserve("预定"),review("审核"),complete("完成");
 	private BookBatchType(String name){
 		this.name = name;
 	}

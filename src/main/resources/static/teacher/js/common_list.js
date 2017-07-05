@@ -519,9 +519,10 @@ function getRootPath() {
  * @param domId
  */
 function okOnBlur(domId) {
+	
 	$("#" + domId).html(
 			"<img style='height:16px; width:20px' title=\"验证成功\"src=\""
-					+ getRootPath() + "/images/icons/ok.gif\">");
+					+ getRootPath() + "/teacher/images/icons/ok.gif\">");
 }
 
 /**

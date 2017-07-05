@@ -15,6 +15,8 @@
 				if(name == '') {
 					$("#nameInfo").text("批次名称不能为空*");
 					return;
+				}else if(!checkName($("#name"))){
+					return;
 				}
 				okOnBlur('nameInfo');
 				
@@ -51,12 +53,7 @@
 			}
 
 			function textOnBlur() {
-				var name = $("#name").val();
-				if(name == '') {
-					$("#nameInfo").text("批次名称不能为空*");
-					return;
-				}
-				okOnBlur('nameInfo');
+				
 				
 				var budget = $("#budget").val();
 				if(budget == 0) {
@@ -88,6 +85,38 @@
 				okOnBlur('contactWayInfo');
 				
 			}
+			
+			/*
+			 * 检查批次名是否唯一
+			 */
+			 
+			 function checkName(obj){
+				 	var judge = false;
+					var $obj = $(obj);
+					var name = $obj.val();
+					
+					if(name == '') {
+						$("#nameInfo").text("批次名称不能为空*");
+						return;
+					}else{
+						$.ajax({
+							type: "post",
+							url:"${base}/teacher/batch/checkName",
+							data:{"name":name},
+							dataType:"json",
+							async:false,
+							success:function(data){
+								if(data.messageType == "SUCCESS") {
+									judge = true;
+									okOnBlur('nameInfo');
+								} else {
+									$("#nameInfo").html("该批次名已经存在，请重新命名*");
+								}
+							}
+						});
+						return judge;
+					}	
+			}
 		</script>
 	</head>
 
@@ -103,7 +132,7 @@
 								<tbody>
 									<tr>
 										<th align="right" width="150">批次名称：</th>
-										<td align="left"><input name="name" type="text" value="" id="name" onblur="textOnBlur()"><span style="color: red" id="nameInfo">*</span></td>
+										<td align="left"><input name="name" type="text" value="" id="name" onblur="checkName(this)"><span style="color: red" id="nameInfo">*</span></td>
 									</tr>
 
 									<tr>

@@ -104,7 +104,7 @@
 
 				<div class="mUl" style="display: none">
 					<div class="mCon" style="display: block;">
-						<a href="${base}/teacher/batch/bookOrderBatch" class="mCon_a" target="main">批次管理</a>
+						<a href="${base}/teacher/batch/list" class="mCon_a" target="main">批次管理</a>
 					</div>
 
 					<div class="mCon" style="display: block;">

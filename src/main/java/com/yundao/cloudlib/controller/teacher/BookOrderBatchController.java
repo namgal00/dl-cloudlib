@@ -18,9 +18,11 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.yundao.cloudlib.I18nConstant;
 import com.yundao.cloudlib.bean.Teacher;
 import com.yundao.cloudlib.model.enumType.BookBatchType;
+import com.yundao.cloudlib.model.enumType.IsWorkBatchType;
 import com.yundao.cloudlib.model.teacher.BookBatch;
 import com.yundao.cloudlib.service.TeacherOrderBatchService;
 
+import framework.mvc.Message;
 import framework.page.Page;
 import framework.page.SearchFilter;
 import framework.util.ServletUtil;
@@ -46,7 +48,7 @@ public class BookOrderBatchController extends BaseController {
 	 * @return
 	 * @return: String
 	 */
-	@RequestMapping("/bookOrderBatch")
+	@RequestMapping("/list")
 	public String bookOrderBatch(Page page, Model model, HttpServletRequest request) {
 		Map<String, Object> searchMap = ServletUtil.getParametersStartingWith(request);
 		List<SearchFilter> filters = ServletUtil.parse(searchMap);
@@ -56,7 +58,7 @@ public class BookOrderBatchController extends BaseController {
 		page = teacherOrderBatchService.find(page);
 		model.addAttribute(PAGE, page);
 		model.addAllAttributes(searchMap);
-		return "/teacher/orderBatch/bookOrderBatch";
+		return "/teacher/orderBatch/list";
 	}
 
 	/**
@@ -83,10 +85,11 @@ public class BookOrderBatchController extends BaseController {
 	public String addBatch(BookBatch bookBatch, HttpSession session, RedirectAttributes ra) {
 
 		bookBatch.setSchoolId(getTeacher().getSchoolId());
-		bookBatch.setStatus(BookBatchType.onunit);
+		bookBatch.setStatus(BookBatchType.reserve);
+		bookBatch.setIsWorkBatch(IsWorkBatchType.no);
 		teacherOrderBatchService.save(bookBatch);
 		addSuccessMessage(I18nConstant.success_add, ra);
-		return redirect("/teacher/batch/bookOrderBatch");
+		return redirect("/teacher/batch/list");
 	}
 
 	/**
@@ -99,13 +102,13 @@ public class BookOrderBatchController extends BaseController {
 	@RequestMapping(value = "/editBatch", method = RequestMethod.GET)
 	public String editBatch(Long ids, Model model, RedirectAttributes ra) {
 		BookBatch bookBatch = teacherOrderBatchService.get(ids);
-		if (bookBatch.getStatus().equals(BookBatchType.onunit)) {
+		if (bookBatch.getStatus().equals(BookBatchType.reserve)) {
 
 			model.addAttribute("bookBatch", bookBatch);
 			return "/teacher/orderBatch/editBatch";
 		}
 		addErrorMessage(I18nConstant.message_error, ra);
-		return redirect("/teacher/batch/bookOrderBatch");
+		return redirect("/teacher/batch/list");
 	}
 
 	/**
@@ -119,7 +122,7 @@ public class BookOrderBatchController extends BaseController {
 	public String editBatch(BookBatch bookBatch, RedirectAttributes ra) {
 		teacherOrderBatchService.updateSelective(bookBatch);
 		addSuccessMessage(I18nConstant.success_edit, ra);
-		return redirect("/teacher/batch/bookOrderBatch");
+		return redirect("/teacher/batch/list");
 	}
 
 	/**
@@ -131,21 +134,41 @@ public class BookOrderBatchController extends BaseController {
 	 * @return
 	 * @return: String
 	 */
-	@RequestMapping("/reserveBatch")
-	public String reserveBatch(Long ids, RedirectAttributes ra) {
-		// 查询是否已经存在预定批次
-		BookBatch bb = teacherOrderBatchService.getOrderBatch(getTeacher().getSchoolId(), BookBatchType.reserve);
+	@RequestMapping("/isWorkBatch")
+	public String isWorkBatchBatch(Long ids, RedirectAttributes ra) {
+		//查询需要修改为当前工作批次
+		BookBatch bookBatch = teacherOrderBatchService.get(ids);
+		// 查询是否已经存在当前批次
+		BookBatch bb = teacherOrderBatchService.getOrderBatch(getTeacher().getSchoolId(), IsWorkBatchType.yes);
 		if (bb != null) {
-			// 预定批次已经存在
-			addErrorMessage(I18nConstant.teacher_order_batch_exist, ra);
-		} else {
-			// 修改要预订的批次状态
-			BookBatch bookBatch = teacherOrderBatchService.get(ids);
-			bookBatch.setStatus(BookBatchType.reserve);
-			teacherOrderBatchService.updateSelective(bookBatch);
-			addSuccessMessage(I18nConstant.success_edit, ra);
+			// 存在当前工作批次，需要修改为不是当前工作批次
+			bb.setIsWorkBatch(IsWorkBatchType.no);
+			teacherOrderBatchService.updateSelective(bb);	
+		} 
+		bookBatch.setIsWorkBatch(IsWorkBatchType.yes);
+		teacherOrderBatchService.update(bookBatch);
+		addSuccessMessage(I18nConstant.success_edit, ra);
+		return redirect("/teacher/batch/list");
+	}
+	
+	/**
+	 * 
+	 * @Title: checkName
+	 * @Description: 检查批次名是否唯一
+	 * @param name
+	 * @return
+	 * @return: String
+	 */
+	@RequestMapping(value="/checkName",method=RequestMethod.POST)
+	@ResponseBody
+	public Message checkName(String name){
+		BookBatch bb=teacherOrderBatchService.getOrderBatchByName(getTeacher().getSchoolId(), name);
+		if(bb==null){
+			return Message.success(I18nConstant.message_success);
+		}else{
+			return Message.error(I18nConstant.message_error);
 		}
-		return redirect("/teacher/batch/bookOrderBatch");
+		
 	}
 
 	/**
@@ -167,10 +190,11 @@ public class BookOrderBatchController extends BaseController {
 	 * @return
 	 * @return: BookBatch
 	 */
+	/*
 	@RequestMapping("/getOrderBookBatch")
 	@ResponseBody
 	public BookBatch getOrderBookBatch() {
 		return teacherOrderBatchService.getOrderBatch(getTeacher().getSchoolId(), BookBatchType.reserve);
 	}
-
+	 */
 }
