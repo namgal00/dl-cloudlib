@@ -215,5 +215,6 @@ public class BatchController extends BaseController {
 		addSuccessMessage(I18nConstant.success_add, ra);
 		return redirect("/admin/batch/list");
 	}
+	
 
 }
