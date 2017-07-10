@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yundao.cloudlib.mapper.TeacherOrderBookMapper" >	
+	<select id="getNumber" parameterType="java.lang.Long" resultType="Map" >
+		select COUNT(*) as species,SUM(book_replication) as bookReplication,sum(book_replication*price) as total 
+		FROM t_teacher_book_apply 
+		where book_batch_id=${bookBatchId};
+	</select>
+	
+</mapper>

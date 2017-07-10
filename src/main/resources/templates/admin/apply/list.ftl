@@ -18,15 +18,16 @@
 			function deleteDate(url) {
 				deleteDataByCheckId(base + url);
 			}
+			
+			function selectDate(url){
+				editDataByCheckId(url);
+			}
 		</script>
 	</head>
 
 	<article class="main">
 		<div class="title">
-			<section>
-				<a href="javascript:history.go(-1);"><b class=icon-arrow-left-thick></b>返回</a>
-				<a href="javascript:history.go(1);">向前<b class=icon-arrow-right-thick></b></a>
-			</section>
+			
 			<span>当前位置：</span>
 			<a href="#">电子书管理</a>
 			<a href="#" class="on">批次管理</a>
@@ -45,17 +46,9 @@
 
 			<div class="nav">
 				<ul>
+					
 					<li>
-						<a href="${base }/admin/batch/add.jhtml">新增</a>
-					</li>
-					<li>
-						<a href="javascript:editDate('${base}/admin/batch/edit.jhtml');">修改</a>
-					</li>
-					<li>
-						<a href="javascript:deleteDate('${base}/admin/batch/delete.jhtml');">删除</a>
-					</li>
-					<li>
-						<a href="javascript:editDate('${base}/admin/batch/addBooks.jhtml');">导入电子书</a>
+						<a href="javascript:selectDate('${base}/admin/apply/selectBook');">查询</a>
 					</li>
 				</ul>
 				<title>批次列表</title>

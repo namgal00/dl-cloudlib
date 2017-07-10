@@ -110,6 +110,96 @@ public class BookApply extends BaseEntity {
 	 */
 	@Column(name = "apply_status", nullable = false, unique = true)
 	private BookApplyType applyStatus;
+	
+	
+
+	public Long getBookBatchId() {
+		return bookBatchId;
+	}
+
+	public void setBookBatchId(Long bookBatchId) {
+		this.bookBatchId = bookBatchId;
+	}
+
+	public String getBookBatchName() {
+		return bookBatchName;
+	}
+
+	public void setBookBatchName(String bookBatchName) {
+		this.bookBatchName = bookBatchName;
+	}
+
+	public String getIsbn() {
+		return isbn;
+	}
+
+	public void setIsbn(String isbn) {
+		this.isbn = isbn;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public String getPress() {
+		return press;
+	}
+
+	public void setPress(String press) {
+		this.press = press;
+	}
+
+	public String getAuthor() {
+		return author;
+	}
+
+	public void setAuthor(String author) {
+		this.author = author;
+	}
+
+	public String getPublicationDate() {
+		return publicationDate;
+	}
+
+	public void setPublicationDate(String publicationDate) {
+		this.publicationDate = publicationDate;
+	}
+
+	public String getClassification() {
+		return classification;
+	}
+
+	public void setClassification(String classification) {
+		this.classification = classification;
+	}
+
+	public String getPath() {
+		return path;
+	}
+
+	public void setPath(String path) {
+		this.path = path;
+	}
+
+	public BigDecimal getPrice() {
+		return price;
+	}
+
+	public void setPrice(BigDecimal price) {
+		this.price = price;
+	}
+
+	public Long getBookReplication() {
+		return bookReplication;
+	}
+
+	public void setBookReplication(Long bookReplication) {
+		this.bookReplication = bookReplication;
+	}
 
 	public Long getSchoolId() {
 		return schoolId;
